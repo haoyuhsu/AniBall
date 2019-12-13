@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SoccerGame.unity
+    guid: 037d7fc168e461247bfebf07798c4133
+  - enabled: 1
+    path: Assets/Scenes/SurvivalGame.unity
+    guid: cfe2b30cfca571c42b6d1289d6554654
+  - enabled: 1
+    path: Assets/Scenes/SoccerGameSetting.unity
+    guid: 60b47b1680af7be4dac0ff13d9238245
+  - enabled: 1
+    path: Assets/Scenes/SurvivalGameSetting.unity
+    guid: 78e793a76d3c29244b753a648d3c3cdf
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 2a7db60e7e31a3c409a717412a110e84
+  m_configObjects: {}
