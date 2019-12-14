@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Toggle : MonoBehaviour
 {
-    public Material OnMaterial;     // 啟動時的Material
-    public Material OffMaterial;    // 關閉時的Material
-    public bool canAttract = true;  // 管控Attractor功能
-    public bool canEject = true;    // 管控Ball Eject功能
-    bool state = false;             // 機關狀態 (開/關)
+    public Material OnNorthMaterial;  // N極時的Material
+    public Material OnSouthMaterial;  // S極時的Material
+    public Material OffMaterial;      // 關閉時的Material
+    public bool canAttract = true;    // 管控Attractor功能
+    public bool canEject = true;      // 管控Ball Eject功能
+    public float shutdownProb = 0.6f; // 機關關閉的機率
     float randomWaitTime;
     MeshRenderer meshRenderer;
     Attractor attractor;
@@ -23,6 +24,43 @@ public class Toggle : MonoBehaviour
     }
 
     IEnumerator ToggleTrigger()
+    {
+        while (true)
+        {
+            float randNumber = Random.Range(0f, 1f);   // 隨機亂數
+            if (randNumber <= shutdownProb)            // 一定機率為關閉
+            {
+                meshRenderer.material = OffMaterial;
+                attractor.enabled = false;
+                ballEject.enabled = false;
+                randomWaitTime = Random.Range(1.0f, 4.0f);
+            }
+            else
+            {
+                randNumber = Random.Range(0f, 1f);
+                /* 一半機率為N極, 一半機率為S極 */
+                if (randNumber >= 0.5f) {
+                    meshRenderer.material = OnNorthMaterial;   // N極
+                    attractor.magnetPole = 1;      
+                } else {
+                    meshRenderer.material = OnSouthMaterial;   // S極
+                    attractor.magnetPole = -1;
+                }
+
+                if (canAttract)
+                    attractor.enabled = true;        // 打開Attractor, 讓機關能夠吸引玩家
+                if (canEject) 
+                    ballEject.enabled = true;        // 打開BallEject, 讓機關能夠彈飛玩家(當接觸時)
+
+                randomWaitTime = Random.Range(1.0f, 2.0f);
+            }
+
+            yield return new WaitForSeconds(randomWaitTime);   // 等待一個隨機時間
+        }
+    }
+
+
+    /*IEnumerator ToggleTrigger()
     {
         while (true)
         {
@@ -45,6 +83,6 @@ public class Toggle : MonoBehaviour
             }
             yield return new WaitForSeconds(randomWaitTime);   // 等待一個隨機時間
         }
-    }
+    }*/
 }
 

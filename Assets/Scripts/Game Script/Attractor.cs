@@ -7,7 +7,8 @@ public class Attractor : MonoBehaviour
     const float G = 6.674f;
     public static List<Attractor> Attractors;
     public Rigidbody rb;
-    public bool isBall = false;
+    public bool isBall = false;         // 物件為球還是機關
+    public int magnetPole = 1;          // 磁極: N為1, S為-1
 
     void FixedUpdate()
     {
@@ -49,6 +50,9 @@ public class Attractor : MonoBehaviour
         float forceMagnitude = G * (rb.mass * rbToAttract.mass) / distance;
         Vector3 force = direction.normalized * forceMagnitude;
 
-        rbToAttract.AddForce(force);
+        /* 依照磁極決定是吸引還是排斥 */
+        int sign = - magnetPole * objToAttract.magnetPole;
+
+        rbToAttract.AddForce(sign * force);
     }
 }

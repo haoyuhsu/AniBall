@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Ball Control\BallRespawn.cs" />
      <Compile Include="Assets\Scripts\Ball Control\ColorSetting.cs" />
      <Compile Include="Assets\Scripts\Ball Control\DeathCount.cs" />
+     <Compile Include="Assets\Scripts\Ball Control\Magnetic.cs" />
      <Compile Include="Assets\Scripts\Ball Control\SpecialEffect.cs" />
      <Compile Include="Assets\Scripts\Camera Control\CameraControl.cs" />
      <Compile Include="Assets\Scripts\Game Script\Attractor.cs" />
@@ -90,6 +91,7 @@
      <Compile Include="Assets\Scripts\SettingUI.cs" />
      <Compile Include="Assets\Scripts\ToLoadScene.cs" />
      <Compile Include="Assets\Scripts\Trap\BallEject.cs" />
+     <Compile Include="Assets\Scripts\Trap\MagnetPlate.cs" />
      <Compile Include="Assets\Scripts\Trap\Toggle.cs" />
      <Compile Include="Assets\Scripts\UI Control\AimSliderControl.cs" />
      <Compile Include="Assets\Scripts\UI Control\BillboardSprite.cs" />
