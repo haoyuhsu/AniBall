@@ -10,15 +10,17 @@ public class BallMove : MonoBehaviour
     public KeyCode shoot = KeyCode.Space;
 
     // 玩家移動的參數設定
-    public float moveForce = 30.0f;        // 移動速度
-    public float maxScale = 1.4f;          // 最大膨脹幅度
-    public bool OnReady = false;
-    public float launchForce = 0;          // 紀錄發射力量
+    public float moveForce = 30.0f;            // 移動速度
+    public float maxScale = 1.4f;              // 最大膨脹幅度
+    public bool OnReady = false;               // 是否開始蓄力
+    public float launchForce = 0;              // 紀錄發射力量
     public float launchForceIncrement = 0.5f;  // 每Frame蓄力增加幅度
     Rigidbody m_rigid;
     Vector3 Scale;
     float moveVertical;
     float moveHorizontal;
+    int moveDir = 1;           // 移動操控正負
+    bool isReverse = false;    // 移動操控是否反向
     bool onGround = false;     // 偵測是否有接觸到地面
     bool launch = false;       // 判斷是否可以發射
 
@@ -29,8 +31,8 @@ public class BallMove : MonoBehaviour
     }
     void Update()
     {
-        moveVertical = Input.GetAxis (vertical_axis);
-		moveHorizontal = Input.GetAxis (horizontal_axis);
+        moveVertical = moveDir * Input.GetAxis (vertical_axis);
+		moveHorizontal = moveDir * Input.GetAxis (horizontal_axis);
 
         if(Input.GetKey(shoot) && !OnReady && onGround){        // 按下彈射按鍵開始蓄力 
             OnReady = true;
@@ -72,5 +74,18 @@ public class BallMove : MonoBehaviour
     void OnCollisionExit(Collision col)
     {
         onGround = false;
+    }
+
+    public void ToggleReverse()
+    {
+        isReverse = !isReverse;
+        if (isReverse)
+        {
+            moveDir = -1;
+        }
+        else
+        {
+            moveDir = 1;
+        }
     }
 }

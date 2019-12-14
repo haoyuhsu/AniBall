@@ -6,8 +6,9 @@ public class SpecialEffect : MonoBehaviour
 {
     public string ballState = "Normal";                   // 玩家目前狀態
     string curState = "Normal";                           // 紀錄curState, 避免isHit情況時狀態混亂
-    public float stayTime = 3.0f;                         // 特殊效果維持時間 (未被觸發)
+    public float stayTime = 5.0f;                         // 特殊效果維持時間 (未被觸發)
     public float freezeTime = 3.0f;                       // 被凍結的時間
+    public float reverseTime = 3.0f;                      // 被控制顛倒的時間
     Vector4 bombColor = new Color(1.0f, 0, 0, 0.5f);      // 紅色 (可把人彈飛)
     Vector4 gasColor = new Color(0, 1.0f, 0, 0.5f);       // 綠色 (可把人凍結)
     Vector4 hitColor = new Color(0, 0, 1.0f, 0.5f);       // 藍色 (被凍結控制)
@@ -84,7 +85,8 @@ public class SpecialEffect : MonoBehaviour
             }
             else if (ballState == "isGas")
             {
-                StartCoroutine(Freeze(col));   // 把人凍結
+                // StartCoroutine(Freeze(col));   // 把人凍結
+                StartCoroutine(ReverseControl(col));  // 把人控制顛倒
                 ballState = "Normal";
             }
         }
@@ -112,5 +114,17 @@ public class SpecialEffect : MonoBehaviour
         yield return new WaitForSeconds(freezeTime);
         se.ballState = "Normal";                        // 回復原本狀態
         ballMove.enabled = true;                        // 恢復對方控制
+    }
+
+    IEnumerator ReverseControl (Collision col)
+    {
+        BallMove ballMove = col.gameObject.GetComponent<BallMove> ();
+        SpecialEffect se = col.gameObject.GetComponent<SpecialEffect> ();
+
+        se.ballState = "isHit";                         // 改變對方玩家狀態
+        ballMove.ToggleReverse();                       // 凍結對方控制
+        yield return new WaitForSeconds(reverseTime);
+        se.ballState = "Normal";                        // 回復原本狀態
+        ballMove.ToggleReverse();                       // 恢復對方控制
     }
 }
