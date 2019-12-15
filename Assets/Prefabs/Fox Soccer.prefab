@@ -720,6 +720,7 @@ GameObject:
   - component: {fileID: 8648305952745598697}
   - component: {fileID: 8648305952748498633}
   - component: {fileID: 8648305952747498505}
+  - component: {fileID: 8439460684673347065}
   m_Layer: 0
   m_Name: brown
   m_TagString: Player
@@ -787,6 +788,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8439460684673347065
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8648305952745566921}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 49daa7457f4f2de48a71877301116d69, type: 3}
 --- !u!1 &8648305952745566923
 GameObject:
   m_ObjectHideFlags: 0
