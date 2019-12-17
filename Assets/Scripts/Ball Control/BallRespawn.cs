@@ -46,10 +46,9 @@ public class BallRespawn : MonoBehaviour
         }
         if (TypeOfGame == "Soccer Game")       // 取分模式重生
         {
-            xPos = Random.Range(4.0f, -4.0f);
-            zPos = Random.Range(4.0f, -4.0f);
-            rb.velocity = new Vector3(0, 0, 0);
-            spawnPos = new Vector3 (xPos, respawnHeight, zPos);
+            rb.velocity = new Vector3(0, 0, 0);   // 速度歸零, 避免慣性移動
+            spawnPos = floorController.GetRandomFloorPosition();  // 從 FloorController 去抓取目前存在地板的位置, 避免重生在空的地板上
+            spawnPos += new Vector3(0, respawnHeight, 0);
             tf.position = spawnPos;
         }
         isRespawning = false;
