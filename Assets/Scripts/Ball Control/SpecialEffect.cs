@@ -9,9 +9,11 @@ public class SpecialEffect : MonoBehaviour
     public float stayTime = 5.0f;                         // 特殊效果維持時間 (未被觸發)
     public float freezeTime = 3.0f;                       // 被凍結的時間
     public float reverseTime = 3.0f;                      // 被控制顛倒的時間
+    public float magnetizeTime = 6.0f;                    // 磁化持續時間 (可以吸引、排斥其他玩家)
     Vector4 bombColor = new Color(1.0f, 0, 0, 0.5f);      // 紅色 (可把人彈飛)
     Vector4 gasColor = new Color(0, 1.0f, 0, 0.5f);       // 綠色 (可把人凍結)
     Vector4 hitColor = new Color(0, 0, 1.0f, 0.5f);       // 藍色 (被凍結控制)
+    Vector4 magnetColor = new Color(1.0f, 0.6f, 0.05f);   // 格黃色 (磁化模式)
     //Vector4 origColor = new Color(1.0f, 1.0f, 1.0f, 0.0f);
     ColorSetting colorSetting;
 
@@ -43,6 +45,10 @@ public class SpecialEffect : MonoBehaviour
         else if (ballState == "isHit")
         {
             colorSetting.SetColor(hitColor);
+        }
+        else if (ballState == "isMagnet")
+        {
+            colorSetting.SetColor(magnetColor);
         }
     }
 
@@ -122,9 +128,33 @@ public class SpecialEffect : MonoBehaviour
         SpecialEffect se = col.gameObject.GetComponent<SpecialEffect> ();
 
         se.ballState = "isHit";                         // 改變對方玩家狀態
-        ballMove.ToggleReverse();                       // 凍結對方控制
+        ballMove.ToggleReverse();                       // 混亂對方控制
         yield return new WaitForSeconds(reverseTime);
         se.ballState = "Normal";                        // 回復原本狀態
         ballMove.ToggleReverse();                       // 恢復對方控制
+    }
+
+    public void MagnetTrigger()
+    {
+        if (ballState == "Normal" || ballState == "isMagnet")
+        {
+            curState = ballState = "isMagnet";
+            StartCoroutine(Magnetize());
+        }
+    }
+
+    IEnumerator Magnetize ()
+    {
+        /* 將isBall設為false, 使得該玩家可以去對其他玩家造成影響 */
+        Attractor attractor = GetComponent<Attractor> ();
+        Rigidbody rb = GetComponent<Rigidbody> ();
+
+        attractor.isBall = false;
+        rb.mass = 10;                    // 增加質量, 增強對其他玩家的磁力影響
+        ballState = "isMagnet";
+        yield return new WaitForSeconds(magnetizeTime);
+        attractor.isBall = true;
+        rb.mass = 1;
+        ballState = "Normal";
     }
 }

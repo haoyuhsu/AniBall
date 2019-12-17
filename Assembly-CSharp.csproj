@@ -53,8 +53,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\All Assets\LowpolyStyle\Shared Scripts\FlickerLight.cs" />
+     <Compile Include="Assets\All Assets\RPGPackFree\Scripts\BowString.cs" />
+     <Compile Include="Assets\All Assets\RPGPackFree\Scripts\OpenChest.cs" />
      <Compile Include="Assets\changescene.cs" />
-     <Compile Include="Assets\LowpolyStyle\Shared Scripts\FlickerLight.cs" />
      <Compile Include="Assets\Scripts\Ball Control\BallMove.cs" />
      <Compile Include="Assets\Scripts\Ball Control\BallRespawn.cs" />
      <Compile Include="Assets\Scripts\Ball Control\ColorSetting.cs" />
@@ -80,6 +82,8 @@
      <Compile Include="Assets\Scripts\Gas\GasSpawn.cs" />
      <Compile Include="Assets\Scripts\Grenade\Grenade.cs" />
      <Compile Include="Assets\Scripts\Grenade\GrenadeSpawn.cs" />
+     <Compile Include="Assets\Scripts\Magnet\Magnet.cs" />
+     <Compile Include="Assets\Scripts\Magnet\MagnetSpawn.cs" />
      <Compile Include="Assets\Scripts\Mesh Deformation\MeshDeformer.cs" />
      <Compile Include="Assets\Scripts\Mesh Deformation\TrigMeshDeformer.cs" />
      <Compile Include="Assets\Scripts\Not Using\Cube\Cube.cs" />
@@ -106,7 +110,7 @@
      <None Include="Assets\Trails FX\Resources\TrailsFX\TrailEffectColor.shader" />
      <None Include="Assets\Trails FX\Resources\TrailsFX\TrailEffectTextureStamp.shader" />
      <None Include="Assets\Trails FX\Resources\TrailsFX\TrailEffectClone.shader" />
-     <None Include="Assets\LowpolyStyle\Arctic Tundra\LowpolyStyleArcticTundraReadme.txt" />
+     <None Include="Assets\All Assets\LowpolyStyle\Arctic Tundra\LowpolyStyleArcticTundraReadme.txt" />
      <None Include="Assets\Trails FX\Resources\TrailsFX\TrailEffectDistort.shader" />
      <None Include="Assets\Trails FX\Resources\TrailsFX\TrailEffectOutline.shader" />
      <None Include="Assets\Trails FX\Resources\TrailsFX\TrailMask.shader" />

@@ -17,7 +17,7 @@ public class Attractor : MonoBehaviour
             /* 若為機關的話, 則對所有Attach Attractor的物件做Attract */
             foreach (Attractor attractor in Attractors)
             {
-                if (attractor != this)
+                if (attractor != this && attractor.isBall)
                     Attract(attractor);
             }
         }

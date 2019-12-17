@@ -601,6 +601,7 @@ MonoBehaviour:
   OffMaterial: {fileID: 2100000, guid: 0bcc3249318bbf14f8fb8b39ad7856ae, type: 2}
   canAttract: 1
   canEject: 1
+  shutdownProb: 0.6
 --- !u!114 &187526967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1136,6 +1137,7 @@ GameObject:
   - component: {fileID: 400857668}
   - component: {fileID: 400857671}
   - component: {fileID: 400857672}
+  - component: {fileID: 400857677}
   - component: {fileID: 400857673}
   - component: {fileID: 400857674}
   - component: {fileID: 400857675}
@@ -1202,7 +1204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1849a8638ca989249aa2005fd264598d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grenade: {fileID: 2494773781195462825, guid: ab826cd11fb87424d86b3d600e30b5a2, type: 3}
+  grenade: {fileID: 6822388621764689586, guid: 56fb2225003b95741bc7582541515954, type: 3}
   min: 5
   max: 10
 --- !u!114 &400857672
@@ -1217,7 +1219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8d8b0f9d1d730248b680b94e42a4258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gas: {fileID: 6087998324580320331, guid: f0bc8e1712e732943b1d697061b7c28a, type: 3}
+  gas: {fileID: 2839666980085717296, guid: c293172045f4f8d44af868b1c7d454e1, type: 3}
   min: 5
   max: 10
 --- !u!114 &400857673
@@ -1279,6 +1281,21 @@ MonoBehaviour:
   survivalFox: {fileID: 0}
   TypeOfGame: Soccer Game
   PlayersObject: {fileID: 1717644790}
+--- !u!114 &400857677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400857667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9167ba5116ccb44396cb9dc5e81f62c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnet: {fileID: 3783282503809843095, guid: 286a65fcf09068c41bb193bb159ea746, type: 3}
+  min: 20
+  max: 30
 --- !u!4 &403901306 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4787460223657084, guid: cc0b6d4b15530d942bffb81f838c93fc,
@@ -1599,6 +1616,7 @@ MonoBehaviour:
   stayTime: 3
   freezeTime: 3
   reverseTime: 3
+  magnetizeTime: 6
 --- !u!114 &523887573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2879,6 +2897,7 @@ MonoBehaviour:
   OffMaterial: {fileID: 2100000, guid: 0bcc3249318bbf14f8fb8b39ad7856ae, type: 2}
   canAttract: 1
   canEject: 1
+  shutdownProb: 0.6
 --- !u!114 &1086363171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3102,6 +3121,7 @@ MonoBehaviour:
   OffMaterial: {fileID: 2100000, guid: 0bcc3249318bbf14f8fb8b39ad7856ae, type: 2}
   canAttract: 1
   canEject: 1
+  shutdownProb: 0.6
 --- !u!114 &1142199133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5003,6 +5023,7 @@ MonoBehaviour:
   OffMaterial: {fileID: 2100000, guid: 0bcc3249318bbf14f8fb8b39ad7856ae, type: 2}
   canAttract: 1
   canEject: 1
+  shutdownProb: 0.6
 --- !u!114 &1794414312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5561,6 +5582,7 @@ MonoBehaviour:
   stayTime: 3
   freezeTime: 3
   reverseTime: 3
+  magnetizeTime: 6
 --- !u!114 &2077154498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6577,6 +6599,7 @@ MonoBehaviour:
   stayTime: 3
   freezeTime: 3
   reverseTime: 3
+  magnetizeTime: 6
 --- !u!1 &2128829263
 GameObject:
   m_ObjectHideFlags: 0
@@ -7631,6 +7654,7 @@ MonoBehaviour:
   stayTime: 3
   freezeTime: 3
   reverseTime: 3
+  magnetizeTime: 6
 --- !u!64 &6918234109051273970
 MeshCollider:
   m_ObjectHideFlags: 0
