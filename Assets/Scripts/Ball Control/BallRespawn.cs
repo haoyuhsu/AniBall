@@ -11,7 +11,8 @@ public class BallRespawn : MonoBehaviour
     float zPos;
     Transform tf;
     Rigidbody rb;
-    Vector3 spawnPos;
+    Vector3 spawnPos;             // 重生位置
+    float groundHeight;           // 地板高度
     DeathCount deathCount;
     bool isRespawning = false;
 
@@ -21,12 +22,13 @@ public class BallRespawn : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody> ();
         deathCount = gameObject.GetComponent<DeathCount> ();
         floorController = FindObjectOfType<FloorController> ();
+        groundHeight = floorController.transform.position.y;
     }
 
     void FixedUpdate()
     {
         // 高度低於某個值時, 就重生
-        if (tf.position.y <= spawnPos.y-6 && !isRespawning)
+        if (tf.position.y <= groundHeight-10 && !isRespawning)
         {
             //Debug.Log(tf.position.y);
             isRespawning = true;
@@ -53,6 +55,11 @@ public class BallRespawn : MonoBehaviour
             tf.position = spawnPos;
         }
         isRespawning = false;
+    }
+
+    public void SetGroundHeight(float val)
+    {
+        groundHeight = val;
     }
 
 }

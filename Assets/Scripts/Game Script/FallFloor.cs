@@ -11,11 +11,14 @@ public class FallFloor : MonoBehaviour
 
     void Start()
     {
-        //StartCoroutine(FloorVanish());     // 每隔一段時間就使得地板掉落
+        // StartCoroutine(FloorVanish());     // 每隔一段時間就使得地板掉落
     }
-    public void enable(){
+
+    public void EnableFalling()
+    {
         StartCoroutine(FloorVanish());
     }
+
     IEnumerator FloorVanish()
     {
         while(true)

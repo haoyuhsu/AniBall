@@ -23,7 +23,6 @@ public class CameraControl : MonoBehaviour
     private void Start()
     {
         m_Targets = PlayersObject.GetComponentsInChildren<Transform> ();
-        Debug.Log(m_Targets);
     }
 
     private void FixedUpdate ()
