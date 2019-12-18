@@ -53,6 +53,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\MeshEffect\Scripts\Editor\MeshRendererEditor.cs" />
+     <Compile Include="Assets\MeshEffect\Shaders\Editor\ME_CustomShaderGUI.cs" />
+     <Compile Include="Assets\MeshEffect\Shaders\Editor\ME_UberParticleGUI.cs" />
      <Compile Include="Assets\Trails FX\Editor\TrailEffectEditor.cs" />
      <Compile Include="Assets\Trails FX\Editor\TrailEffectProfileEditor.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">

@@ -904,6 +904,15 @@ MonoBehaviour:
   stayTime: 3
   freezeTime: 3
   reverseTime: 3
+  magnetizeTime: 6
+  bombPE: {fileID: 630414325212985730, guid: 2681c1ecad4b55949bde04f7730e962b, type: 3}
+  gasPE: {fileID: 2541008733345176078, guid: 804f9208a0dfa3548a68dffb9c041b31, type: 3}
+  isHitPE: {fileID: 3316706722974514869, guid: 794a6231921068244974a7ea972e25e9, type: 3}
+  magnetPE: {fileID: 8164463597332769709, guid: 0c76c679399601c43849ee234f87ab08,
+    type: 3}
+  BurstPE: {fileID: 7810800350616811068, guid: e6d0a229fe6727b4aaa3564e79b81c64, type: 3}
+  FreezePE: {fileID: 5813270272649489235, guid: bfbbb06e52143db438577127404e176b,
+    type: 3}
 --- !u!114 &8648305952745566914
 MonoBehaviour:
   m_ObjectHideFlags: 0

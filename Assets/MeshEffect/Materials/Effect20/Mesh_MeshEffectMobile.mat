@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Mesh_MeshEffectMobile
+  m_Shader: {fileID: 4800000, guid: 6b973ca1a9c91494595f9478785fc761, type: 3}
+  m_ShaderKeywords: _EMISSION _NORMALMAP
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: fd1e47788d217004b8b7325ef23ad5d0, type: 3}
+        m_Scale: {x: 0.4, y: 0.7}
+        m_Offset: {x: 0, y: 0}
+    - _CutoutTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HeightMap:
+        m_Texture: {fileID: 2800000, guid: cd8abd51143aa5140aded186614aa040, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HeightTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PerlinNoise:
+        m_Texture: {fileID: 2800000, guid: 288eab14fb0f7ec4398350582ada2801, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - permutation:
+        m_Texture: {fileID: 2800000, guid: 100221baada53b74489b25ac8b7e0120, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AlphaClip: 10
+    - _BumpAmt: 150
+    - _BumpScale: 1
+    - _ColorStrength: 0.5
+    - _CullMode: 2
+    - _Cutoff: 1
+    - _Cutout: 1
+    - _CutoutThreshold: 0.015
+    - _DetailNormalMapScale: 1
+    - _Distortion: 100
+    - _DstBlend: 0
+    - _FPOW: 4
+    - _FresnelDistort: 1500
+    - _FresnelPow: 5
+    - _FresnelR0: 0.04
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Height: 1
+    - _HeightScale: 0.3
+    - _InvFade: 3
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _OffsetXHeightMap: 0
+    - _OffsetYHeightMap: 0
+    - _Parallax: 0.02
+    - _R0: -0.1
+    - _RefractiveStrength: 0
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _UseAlphaCliping: 0
+    - _UseBlending: 0
+    - _UseCutout: 0
+    - _UseFresnel: 0
+    - _UseHeight: 0
+    - _UseMainTex: 0
+    - _UseRefractive: 0
+    - _UseSoft: 0
+    - _ZWrite: 1
+    - _ZWriteMode: 0
+    - gain: 1
+    - scale_x: 1
+    - scale_y: 1
+    - setup: 0
+    - shift_x: 1.14
+    - shift_y: 1
+    m_Colors:
+    - _Color: {r: 0.9264706, g: 0.95740366, b: 1, a: 1}
+    - _CutoutColor: {r: 1, g: 1, b: 1, a: 1}
+    - _DropWavesScale: {r: 2, g: 1.5, b: -1, a: 0.5}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FresnelColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _HeightScaleVector: {r: 0.5, g: 2, b: 0.02, a: 1}
+    - _HeightScaleVector2: {r: 1, g: 1, b: 1, a: 0.2}
+    - _HeightUVScrollDistort: {r: 8, g: 12, b: 0, a: 0}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _NoiseScale: {r: 1.5, g: 1.5, b: 1, a: 0.45}
+    - _ReflectColor: {r: 1, g: 1, b: 1, a: 0.5}
+    - _RimColor: {r: 0.9137188, g: 1.0796143, b: 1.3080606, a: 1}
+    - _Scale: {r: 2, g: 2, b: 2, a: 1}
+    - _Shift: {r: 0, g: 0, b: 0, a: 500}
+    - _Speed: {r: -1, g: -2, b: 1, a: -5}
+    - _TintColor: {r: 0.9411765, g: 0.9634888, b: 1, a: 1}

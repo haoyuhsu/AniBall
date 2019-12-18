@@ -14,7 +14,14 @@ public class SpecialEffect : MonoBehaviour
     Vector4 gasColor = new Color(0, 1.0f, 0, 0.5f);       // 綠色 (可把人凍結)
     Vector4 hitColor = new Color(0, 0, 1.0f, 0.5f);       // 藍色 (被凍結控制)
     Vector4 magnetColor = new Color(1.0f, 0.6f, 0.05f);   // 格黃色 (磁化模式)
-    //Vector4 origColor = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+    public GameObject bombPE;                             // bomb狀態粒子效果
+    public GameObject gasPE;                              // gas狀態粒子效果
+    public GameObject isHitPE;                            // isHit狀態粒子效果
+    public GameObject magnetPE;                           // 磁化狀態粒子效果
+    public GameObject BurstPE;                            // bomb狀態和人碰撞時的粒子效果
+    public GameObject FreezePE;                           // gas狀態和人碰撞時的粒子效果
+    GameObject curPE;                                     // 目前生成的粒子效果
+    List<GameObject> ListPE = new List<GameObject>();                                    // 存著所有生成粒子效果的物件     
     ColorSetting colorSetting;
 
     void Start()
@@ -57,6 +64,9 @@ public class SpecialEffect : MonoBehaviour
         if (ballState == "Normal" || ballState == "isBomb")
         {
             curState = ballState = "isBomb";
+            curPE = Instantiate(bombPE, transform.position, Quaternion.identity);        // 生成紅色炫光
+            curPE.transform.parent = gameObject.transform;                               // 將生成Prefab放到ListPE的Hierarchy底下
+            ListPE.Add(curPE);
             StartCoroutine(CountDown());
         }
     }
@@ -66,6 +76,9 @@ public class SpecialEffect : MonoBehaviour
         if (ballState == "Normal" || ballState == "isGas")
         {
             curState = ballState = "isGas";
+            curPE = Instantiate(gasPE, transform.position, Quaternion.identity);         // 生成綠色炫光
+            curPE.transform.parent = gameObject.transform;                               // 將生成Prefab放到ListPE的Hierarchy底下
+            ListPE.Add(curPE);
             StartCoroutine(CountDown());
         }
     }
@@ -77,6 +90,7 @@ public class SpecialEffect : MonoBehaviour
         if (curState == ballState)
         {
             ballState = "Normal";
+            ClearParticleEffects();
         }
     }
 
@@ -84,16 +98,25 @@ public class SpecialEffect : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")   // 和其他玩家碰撞
         {
+            Vector3 hitPoint = col.contacts[0].point;
             if (ballState == "isBomb")
             {
                 Burst(col);                    // 把人彈飛
                 ballState = "Normal";
+                ClearParticleEffects();
+                curPE = Instantiate(BurstPE, hitPoint, Quaternion.identity);    // 生成衝撞粒子效果
+                curPE.transform.parent = gameObject.transform;
+                ListPE.Add(curPE);
             }
             else if (ballState == "isGas")
             {
                 // StartCoroutine(Freeze(col));   // 把人凍結
                 StartCoroutine(ReverseControl(col));  // 把人控制顛倒
                 ballState = "Normal";
+                ClearParticleEffects();
+                curPE = Instantiate(FreezePE, hitPoint, Quaternion.identity);    // 生成衝撞粒子效果
+                curPE.transform.parent = gameObject.transform;
+                ListPE.Add(curPE);
             }
         }
     }
@@ -110,6 +133,14 @@ public class SpecialEffect : MonoBehaviour
         rbToBurst.AddForce(force);
     }
 
+    public void IsHitTrigger()                   // 被擊到時觸發生成炫光
+    {
+        ballState = "isHit";
+        curPE = Instantiate(isHitPE, transform.position, Quaternion.identity);         // 生成藍色炫光
+        curPE.transform.parent = gameObject.transform;                                 // 將生成Prefab放到ListPE的Hierarchy底下
+        ListPE.Add(curPE);
+    }
+
     IEnumerator Freeze (Collision col)
     {
         BallMove ballMove = col.gameObject.GetComponent<BallMove> ();
@@ -119,6 +150,7 @@ public class SpecialEffect : MonoBehaviour
         ballMove.enabled = false;                       // 凍結對方控制
         yield return new WaitForSeconds(freezeTime);
         se.ballState = "Normal";                        // 回復原本狀態
+        se.ClearParticleEffects();
         ballMove.enabled = true;                        // 恢復對方控制
     }
 
@@ -128,9 +160,11 @@ public class SpecialEffect : MonoBehaviour
         SpecialEffect se = col.gameObject.GetComponent<SpecialEffect> ();
 
         se.ballState = "isHit";                         // 改變對方玩家狀態
+        IsHitTrigger();
         ballMove.ToggleReverse();                       // 混亂對方控制
         yield return new WaitForSeconds(reverseTime);
         se.ballState = "Normal";                        // 回復原本狀態
+        ClearParticleEffects();
         ballMove.ToggleReverse();                       // 恢復對方控制
     }
 
@@ -139,6 +173,9 @@ public class SpecialEffect : MonoBehaviour
         if (ballState == "Normal" || ballState == "isMagnet")
         {
             curState = ballState = "isMagnet";
+            curPE = Instantiate(magnetPE, transform.position, Quaternion.identity);        // 生成紫色炫光
+            curPE.transform.parent = gameObject.transform;                                 // 將生成Prefab放到ListPE的Hierarchy底下
+            ListPE.Add(curPE);
             StartCoroutine(Magnetize());
         }
     }
@@ -156,5 +193,17 @@ public class SpecialEffect : MonoBehaviour
         attractor.isBall = true;
         rb.mass = 1;
         ballState = "Normal";
+        ClearParticleEffects();
+    }
+
+    public void ClearParticleEffects()
+    {
+        if (ListPE != null)
+        {
+            foreach(GameObject PE in ListPE)
+            {
+                Destroy(PE);
+            }
+        }
     }
 }
