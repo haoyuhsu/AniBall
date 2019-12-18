@@ -7,6 +7,8 @@ public class PlayerInit : MonoBehaviour
     /* 做玩家Prefab的動態生成 */
     public GameObject soccerFox;
     public GameObject survivalFox;
+    public GameObject soccerRacoon;
+    public GameObject survivalRacoon;
     public string TypeOfGame;
     public GameObject PlayersObject;    // 玩家們
     int numPlayers;
@@ -34,6 +36,7 @@ public class PlayerInit : MonoBehaviour
         {
             string animalName = gameSetting.playersAnimal[i];
             if (animalName == "Fox")  GeneratePlayer(i, soccerFox);
+            else if (animalName == "Racoon")  GeneratePlayer(i, soccerRacoon);
         }
     }
 
@@ -43,6 +46,7 @@ public class PlayerInit : MonoBehaviour
         {
             string animalName = gameSetting.playersAnimal[i];
             if (animalName == "Fox")  GeneratePlayer(i, survivalFox);
+            else if (animalName == "Racoon")  GeneratePlayer(i, survivalRacoon);
         }
     }
 

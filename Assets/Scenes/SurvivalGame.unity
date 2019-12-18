@@ -9999,8 +9999,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a2392034827e2499630567e6c8dd8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soccerFox: {fileID: 0}
+  soccerFox: {fileID: 8648305952745566923, guid: 095d9e0bfd58cf24fb7cb0cd1a31f978,
+    type: 3}
   survivalFox: {fileID: 8213018067999834180, guid: 66bd952aa0d11024687d1be4e6c632d7,
+    type: 3}
+  soccerRacoon: {fileID: 5819673120538513462, guid: 0b6ee93ff279b5147a916911e0028c64,
+    type: 3}
+  survivalRacoon: {fileID: 5819673120538513462, guid: a3258c83353f75c41ae0aa7044c5582c,
     type: 3}
   TypeOfGame: Survival Game
   PlayersObject: {fileID: 903073959}

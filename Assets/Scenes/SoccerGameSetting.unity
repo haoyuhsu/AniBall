@@ -5672,6 +5672,8 @@ MonoBehaviour:
     m_Options:
     - m_Text: Fox
       m_Image: {fileID: 0}
+    - m_Text: Racoon
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -6269,6 +6271,8 @@ MonoBehaviour:
     m_Options:
     - m_Text: Fox
       m_Image: {fileID: 0}
+    - m_Text: Racoon
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -6667,6 +6671,8 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: Fox
+      m_Image: {fileID: 0}
+    - m_Text: Racoon
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7409,6 +7415,8 @@ MonoBehaviour:
   m_Options:
     m_Options:
     - m_Text: Fox
+      m_Image: {fileID: 0}
+    - m_Text: Racoon
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:

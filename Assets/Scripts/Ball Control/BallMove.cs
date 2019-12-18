@@ -34,7 +34,7 @@ public class BallMove : MonoBehaviour
         moveVertical = moveDir * Input.GetAxis (vertical_axis);
 		moveHorizontal = moveDir * Input.GetAxis (horizontal_axis);
 
-        if(Input.GetKey(shoot) && !OnReady && onGround){        // 按下彈射按鍵開始蓄力 
+        if(Input.GetKey(shoot) && !OnReady){        // 按下彈射按鍵開始蓄力 
             OnReady = true;
             m_rigid.velocity = new Vector3(0,0,0);
         }
