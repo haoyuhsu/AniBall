@@ -26,8 +26,9 @@ public class BallRespawn : MonoBehaviour
     void FixedUpdate()
     {
         // 高度低於某個值時, 就重生
-        if (tf.position.y <= -3f && !isRespawning)
+        if (tf.position.y <= spawnPos.y-6 && !isRespawning)
         {
+            //Debug.Log(tf.position.y);
             isRespawning = true;
             RespawnPlayer();
         }

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Barrel
   - Floor
+  - floor
+  - environment
   layers:
   - Default
   - TransparentFX
