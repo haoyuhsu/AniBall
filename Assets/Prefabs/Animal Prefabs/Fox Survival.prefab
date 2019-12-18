@@ -602,7 +602,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8213018067999834176}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 905fa4280969fb546994a176a77b3a29, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -820,6 +820,7 @@ MonoBehaviour:
   stayTime: 3
   freezeTime: 3
   reverseTime: 3
+  magnetizeTime: 6
 --- !u!114 &8213018067999834189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -973,7 +974,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8213018067999834182}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 905fa4280969fb546994a176a77b3a29, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
