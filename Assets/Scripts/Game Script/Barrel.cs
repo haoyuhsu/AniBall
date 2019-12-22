@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class Barrel : MonoBehaviour
 {
+    FloorController floorController;
     Vector3 originalPos;
     Quaternion originalRot;
     Transform barrelTransform;
     Rigidbody rb;
     Vector3 player1Side = new Vector3(-1.9f, 2.93f, -1.85f);    // 重生位置靠近Player 1
     Vector3 player2Side = new Vector3(2.64f, 2.93f, -1.85f);    // 重生位置靠近Player 2
+    Vector3 spawnPos;             // 重生位置
+    float groundHeight;           // 地板高度
+    bool isRespawning = false;
  
     void Start()
     {
@@ -17,13 +21,18 @@ public class Barrel : MonoBehaviour
         barrelTransform = GetComponent<Transform> ();
         originalPos = barrelTransform.position;
         originalRot = barrelTransform.rotation;
+        floorController = FindObjectOfType<FloorController> ();
+        groundHeight = floorController.transform.position.y;
     }
 
     void FixedUpdate()
     {
         /* Barrel 掉落到場外, Reset其位置為中間 */
-        if (barrelTransform.position.y <= -10f)
+        if (barrelTransform.position.y <= groundHeight-10 && !isRespawning)
+        {
+            isRespawning = true;
             resetBarrel("center");
+        }
     }
 
     public void resetBarrel(string playerSide)
@@ -50,6 +59,7 @@ public class Barrel : MonoBehaviour
         {
             barrelTransform.position = originalPos;
         }
+        isRespawning = false;
     }
 
 }

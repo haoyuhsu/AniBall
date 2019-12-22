@@ -9,6 +9,10 @@ public class PlayerInit : MonoBehaviour
     public GameObject survivalFox;
     public GameObject soccerRacoon;
     public GameObject survivalRacoon;
+    public GameObject soccerCat;
+    public GameObject survivalCat;
+    public GameObject soccerDog;
+    public GameObject survivalDog;
     public string TypeOfGame;
     public GameObject PlayersObject;    // 玩家們
     int numPlayers;
@@ -37,6 +41,8 @@ public class PlayerInit : MonoBehaviour
             string animalName = gameSetting.playersAnimal[i];
             if (animalName == "Fox")  GeneratePlayer(i, soccerFox);
             else if (animalName == "Racoon")  GeneratePlayer(i, soccerRacoon);
+            else if (animalName == "Cat")  GeneratePlayer(i, soccerCat);
+            else if (animalName == "Dog")  GeneratePlayer(i, soccerDog);
         }
     }
 
@@ -47,6 +53,8 @@ public class PlayerInit : MonoBehaviour
             string animalName = gameSetting.playersAnimal[i];
             if (animalName == "Fox")  GeneratePlayer(i, survivalFox);
             else if (animalName == "Racoon")  GeneratePlayer(i, survivalRacoon);
+            else if (animalName == "Cat")  GeneratePlayer(i, survivalCat);
+            else if (animalName == "Dog")  GeneratePlayer(i, survivalDog);
         }
     }
 

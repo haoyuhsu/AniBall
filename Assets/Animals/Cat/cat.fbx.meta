@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: d41038de201ba154a96b8995fa8ed9d0
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: backLegs
+    100002: body
+    100004: //RootNode
+    100006: frontLegs
+    100008: head
+    100010: leftEye
+    100012: leftEyeball
+    100014: mouse
+    100016: nose
+    100018: rightEye
+    100020: rightEyeball
+    100022: tail
+    400000: backLegs
+    400002: body
+    400004: //RootNode
+    400006: frontLegs
+    400008: head
+    400010: leftEye
+    400012: leftEyeball
+    400014: mouse
+    400016: nose
+    400018: rightEye
+    400020: rightEyeball
+    400022: tail
+    2100000: brown
+    2100002: white
+    2100004: dark_brown
+    2100006: red_black
+    2100008: Eye
+    2100010: black
+    2300000: backLegs
+    2300002: body
+    2300004: frontLegs
+    2300006: head
+    2300008: leftEye
+    2300010: leftEyeball
+    2300012: mouse
+    2300014: nose
+    2300016: rightEye
+    2300018: rightEyeball
+    2300020: tail
+    3300000: backLegs
+    3300002: body
+    3300004: frontLegs
+    3300006: head
+    3300008: leftEye
+    3300010: leftEyeball
+    3300012: mouse
+    3300014: nose
+    3300016: rightEye
+    3300018: rightEyeball
+    3300020: tail
+    4300000: head
+    4300002: nose
+    4300004: leftEye
+    4300006: rightEye
+    4300008: mouse
+    4300010: body
+    4300012: frontLegs
+    4300014: backLegs
+    4300016: tail
+    4300018: leftEyeball
+    4300020: rightEyeball
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eye
+    second: {fileID: 2100000, guid: 52be00466a224f24da62e9855ecbc22a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black
+    second: {fileID: 2100000, guid: 2c1a6284c524d384c8ab64fa6fbd59b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brown
+    second: {fileID: 2100000, guid: 291c9da9ccb240049a2036af2e2980a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dark_brown
+    second: {fileID: 2100000, guid: 481a41e18536c3f4eaa2e2180a2a4637, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: red_black
+    second: {fileID: 2100000, guid: e5f73453cab9dfe46be1ba5399b56a98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: white
+    second: {fileID: 2100000, guid: ab19c322a8a5c9240852706e6115a496, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

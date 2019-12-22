@@ -10007,6 +10007,12 @@ MonoBehaviour:
     type: 3}
   survivalRacoon: {fileID: 5819673120538513462, guid: a3258c83353f75c41ae0aa7044c5582c,
     type: 3}
+  soccerCat: {fileID: 7968285794832590531, guid: 2200328b60697be409110dbfaa16cb96,
+    type: 3}
+  survivalCat: {fileID: 1568203370640993144, guid: 6e64b4ee2363ffc458c5ba146778b31f,
+    type: 3}
+  soccerDog: {fileID: 0}
+  survivalDog: {fileID: 0}
   TypeOfGame: Survival Game
   PlayersObject: {fileID: 903073959}
 --- !u!114 &400857678

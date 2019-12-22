@@ -23680,7 +23680,7 @@ GameObject:
   - component: {fileID: 8168697766952034093}
   - component: {fileID: 8130661339794212203}
   m_Layer: 0
-  m_Name: vfx_ToonProjectile_Plasma03Purple
+  m_Name: vfx_ToonProjectile_Plasma03Purple (Magnet)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23695,7 +23695,7 @@ Transform:
   m_GameObject: {fileID: 8164463597332769709}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.65, y: 2, z: -0.05}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1265, y: 1.1265, z: 1.1265}
   m_Children:
   - {fileID: 8161416369402351933}
   m_Father: {fileID: 0}

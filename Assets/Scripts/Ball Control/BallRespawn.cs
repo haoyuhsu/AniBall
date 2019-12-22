@@ -30,7 +30,6 @@ public class BallRespawn : MonoBehaviour
         // 高度低於某個值時, 就重生
         if (tf.position.y <= groundHeight-10 && !isRespawning)
         {
-            //Debug.Log(tf.position.y);
             isRespawning = true;
             RespawnPlayer();
         }
