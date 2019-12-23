@@ -28447,6 +28447,7 @@ MonoBehaviour:
   OnReady: 0
   launchForce: 0
   launchForceIncrement: 0.5
+  lockOnAir: 1
 --- !u!54 &523887575
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -91537,6 +91538,7 @@ MonoBehaviour:
   OnReady: 0
   launchForce: 0
   launchForceIncrement: 0.5
+  lockOnAir: 1
 --- !u!54 &2077154499
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -94156,6 +94158,7 @@ MonoBehaviour:
   OnReady: 0
   launchForce: 0
   launchForceIncrement: 0.5
+  lockOnAir: 1
 --- !u!1 &2128829267
 GameObject:
   m_ObjectHideFlags: 0
@@ -95848,6 +95851,7 @@ MonoBehaviour:
   OnReady: 0
   launchForce: 0
   launchForceIncrement: 0.5
+  lockOnAir: 1
 --- !u!54 &5474313391286130230
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -96088,7 +96092,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eed00783d2c7ba240a4cdc3173c11a92, type: 2}
+  - {fileID: 2100000, guid: 856b6686620868747ae0602e9bfb00de, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

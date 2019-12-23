@@ -722,6 +722,7 @@ GameObject:
   - component: {fileID: 8213018067999834185}
   - component: {fileID: 8213018067999834183}
   - component: {fileID: 8708142867143127823}
+  - component: {fileID: 4102511433918952479}
   m_Layer: 0
   m_Name: Fox Survival
   m_TagString: Player
@@ -791,6 +792,9 @@ MonoBehaviour:
   OnReady: 0
   launchForce: 0
   launchForceIncrement: 0.5
+  lockOnAir: 0
+  shootClip: {fileID: 8300000, guid: 3bb00c2bb386a354c94cc0cc25b8fe04, type: 3}
+  inflateClip: {fileID: 8300000, guid: 17574092e2c59d045b85e3c32659e497, type: 3}
 --- !u!114 &8213018067999834177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -829,6 +833,8 @@ MonoBehaviour:
   BurstPE: {fileID: 7810800350616811068, guid: e6d0a229fe6727b4aaa3564e79b81c64, type: 3}
   FreezePE: {fileID: 5813270272649489235, guid: bfbbb06e52143db438577127404e176b,
     type: 3}
+  burstClip: {fileID: 8300000, guid: f956457e257603844b3216437c162c83, type: 3}
+  freezeClip: {fileID: 8300000, guid: e245ec087333e0d4d81f035641b7fda7, type: 3}
 --- !u!114 &8213018067999834189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,6 +902,102 @@ MonoBehaviour:
   NorthPoleMat: {fileID: 21300000, guid: 16157143b5af168498abf9d773de13bc, type: 3}
   SouthPoleMat: {fileID: 21300000, guid: 486fa48974c814f42bd38f4986852ab4, type: 3}
   MagneticImage: {fileID: 1441313540265409719}
+--- !u!82 &4102511433918952479
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8213018067999834180}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8213018067999834182
 GameObject:
   m_ObjectHideFlags: 0

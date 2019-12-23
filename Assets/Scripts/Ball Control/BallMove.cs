@@ -15,6 +15,7 @@ public class BallMove : MonoBehaviour
     public bool OnReady = false;               // 是否開始蓄力
     public float launchForce = 0;              // 紀錄發射力量
     public float launchForceIncrement = 0.5f;  // 每Frame蓄力增加幅度
+    public bool lockOnAir = true;              // 空中是否能做彈射
     Rigidbody m_rigid;
     Vector3 Scale;
     float moveVertical;
@@ -23,20 +24,26 @@ public class BallMove : MonoBehaviour
     bool isReverse = false;    // 移動操控是否反向
     bool onGround = false;     // 偵測是否有接觸到地面
     bool launch = false;       // 判斷是否可以發射
+    AudioSource audioSource;
+    public AudioClip shootClip;       // 彈射出去音效
+    public AudioClip inflateClip;     // 充氣增大的音效
 
     void Start()
     {
         m_rigid = this.gameObject.GetComponent<Rigidbody>();
         Scale = this.gameObject.transform.localScale;
+        audioSource = this.gameObject.GetComponent<AudioSource> ();
     }
     void Update()
     {
         moveVertical = moveDir * Input.GetAxis (vertical_axis);
 		moveHorizontal = moveDir * Input.GetAxis (horizontal_axis);
 
-        if(Input.GetKey(shoot) && !OnReady){        // 按下彈射按鍵開始蓄力 
+        if(Input.GetKey(shoot) && !OnReady && (onGround || !lockOnAir)){        // 按下彈射按鍵開始蓄力 
             OnReady = true;
             m_rigid.velocity = new Vector3(0,0,0);
+            audioSource.clip = inflateClip;
+            audioSource.Play();
         }
 
 		if(!Input.GetKey(shoot) && OnReady){                    // 放開彈射按鍵彈射出去
@@ -49,6 +56,8 @@ public class BallMove : MonoBehaviour
             m_rigid.velocity = launchForce * Vector3.Normalize(Vector3.forward * moveVertical + Vector3.right * moveHorizontal);
             launch = false;
             launchForce = 0;
+            audioSource.clip = shootClip;
+            audioSource.Play();
         }
     }
     void FixedUpdate()

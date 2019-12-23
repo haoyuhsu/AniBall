@@ -21,12 +21,16 @@ public class SpecialEffect : MonoBehaviour
     public GameObject BurstPE;                            // bomb狀態和人碰撞時的粒子效果
     public GameObject FreezePE;                           // gas狀態和人碰撞時的粒子效果
     GameObject curPE;                                     // 目前生成的粒子效果
-    List<GameObject> ListPE = new List<GameObject>();                                    // 存著所有生成粒子效果的物件     
+    List<GameObject> ListPE = new List<GameObject>();     // 存著所有生成粒子效果的物件     
     ColorSetting colorSetting;
+    AudioSource audioSource;
+    public AudioClip burstClip;                           // 爆炸音效
+    public AudioClip freezeClip;                          // 凍結音效
 
     void Start()
     {
         colorSetting = GetComponent<ColorSetting> ();
+        audioSource = GetComponent<AudioSource> ();
     }
 
     void FixedUpdate()
@@ -107,6 +111,7 @@ public class SpecialEffect : MonoBehaviour
                 curPE = Instantiate(BurstPE, hitPoint, Quaternion.identity);    // 生成衝撞粒子效果
                 curPE.transform.parent = gameObject.transform;
                 ListPE.Add(curPE);
+                audioSource.PlayOneShot(burstClip, 1.0f);      // 播放炸飛音效
             }
             else if (ballState == "isGas")
             {
@@ -117,6 +122,7 @@ public class SpecialEffect : MonoBehaviour
                 curPE = Instantiate(FreezePE, hitPoint, Quaternion.identity);    // 生成衝撞粒子效果
                 curPE.transform.parent = gameObject.transform;
                 ListPE.Add(curPE);
+                audioSource.PlayOneShot(freezeClip, 1.0f);     // 播放凍結音效
             }
         }
     }
