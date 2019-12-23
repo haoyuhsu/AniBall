@@ -19272,8 +19272,10 @@ MonoBehaviour:
     type: 3}
   survivalCat: {fileID: 1568203370640993144, guid: 6e64b4ee2363ffc458c5ba146778b31f,
     type: 3}
-  soccerDog: {fileID: 0}
-  survivalDog: {fileID: 0}
+  soccerDog: {fileID: 3099910967821930036, guid: 12590c7c75468ff46a337eaa316607dd,
+    type: 3}
+  survivalDog: {fileID: 5369826934582730976, guid: 54fbc6b7d4111844abd94fcc53484be7,
+    type: 3}
   TypeOfGame: Soccer Game
   PlayersObject: {fileID: 1717644790}
 --- !u!114 &400857677
@@ -28411,6 +28413,8 @@ MonoBehaviour:
   magnetPE: {fileID: 0}
   BurstPE: {fileID: 0}
   FreezePE: {fileID: 0}
+  burstClip: {fileID: 0}
+  freezeClip: {fileID: 0}
 --- !u!114 &523887573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28448,6 +28452,8 @@ MonoBehaviour:
   launchForce: 0
   launchForceIncrement: 0.5
   lockOnAir: 1
+  shootClip: {fileID: 0}
+  inflateClip: {fileID: 0}
 --- !u!54 &523887575
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -91518,6 +91524,8 @@ MonoBehaviour:
   magnetPE: {fileID: 0}
   BurstPE: {fileID: 0}
   FreezePE: {fileID: 0}
+  burstClip: {fileID: 0}
+  freezeClip: {fileID: 0}
 --- !u!114 &2077154498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91539,6 +91547,8 @@ MonoBehaviour:
   launchForce: 0
   launchForceIncrement: 0.5
   lockOnAir: 1
+  shootClip: {fileID: 0}
+  inflateClip: {fileID: 0}
 --- !u!54 &2077154499
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -94102,6 +94112,8 @@ MonoBehaviour:
   magnetPE: {fileID: 0}
   BurstPE: {fileID: 0}
   FreezePE: {fileID: 0}
+  burstClip: {fileID: 0}
+  freezeClip: {fileID: 0}
 --- !u!1 &2128829263
 GameObject:
   m_ObjectHideFlags: 0
@@ -94159,6 +94171,8 @@ MonoBehaviour:
   launchForce: 0
   launchForceIncrement: 0.5
   lockOnAir: 1
+  shootClip: {fileID: 0}
+  inflateClip: {fileID: 0}
 --- !u!1 &2128829267
 GameObject:
   m_ObjectHideFlags: 0
@@ -95852,6 +95866,8 @@ MonoBehaviour:
   launchForce: 0
   launchForceIncrement: 0.5
   lockOnAir: 1
+  shootClip: {fileID: 0}
+  inflateClip: {fileID: 0}
 --- !u!54 &5474313391286130230
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -95891,6 +95907,8 @@ MonoBehaviour:
   magnetPE: {fileID: 0}
   BurstPE: {fileID: 0}
   FreezePE: {fileID: 0}
+  burstClip: {fileID: 0}
+  freezeClip: {fileID: 0}
 --- !u!64 &6918234109051273970
 MeshCollider:
   m_ObjectHideFlags: 0
