@@ -14,7 +14,7 @@ public class GameSetting : MonoBehaviour
     public KeyCode[] KeyCodeList = new KeyCode[4];    // 玩家的噴射按鍵
     static GameSetting TheOnlyOneGameSetting;
 
-    void Start()
+    void Awake()
     {
         if (TheOnlyOneGameSetting != null)
         {
@@ -24,8 +24,6 @@ public class GameSetting : MonoBehaviour
 
         TheOnlyOneGameSetting = this;
         GameObject.DontDestroyOnLoad( this.gameObject );
-
-        InitPlayersName();
     }
 
     void InitPlayersName()
