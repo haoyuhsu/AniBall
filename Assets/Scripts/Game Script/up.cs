@@ -6,7 +6,7 @@ public class Up : MonoBehaviour
 {
     float cnt = 0;
     float speed = 0.1f;
-    float finalHeight = 50f;
+    public float finalHeight;
     bool isLifting = false;
     FallFloor fallFloor;
     public Transform ringTransform;
