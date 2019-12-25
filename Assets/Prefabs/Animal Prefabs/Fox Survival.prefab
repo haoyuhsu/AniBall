@@ -1035,7 +1035,7 @@ MonoBehaviour:
   OnReady: 0
   launchForce: 0
   launchForceIncrement: 0.5
-  lockOnAir: 0
+  lockOnAir: 1
   shootClip: {fileID: 8300000, guid: 3bb00c2bb386a354c94cc0cc25b8fe04, type: 3}
   inflateClip: {fileID: 8300000, guid: 17574092e2c59d045b85e3c32659e497, type: 3}
 --- !u!114 &8213018067999834177
