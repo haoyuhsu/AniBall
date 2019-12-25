@@ -908,6 +908,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ringParticle: {fileID: 0}
+  rainbowParticle: {fileID: 105726594461036720, guid: e61bd6973074d6a4599070da240f7581,
+    type: 3}
   bottom: {fileID: 2438433820557855492}
 --- !u!82 &7985389642292898898
 AudioSource:

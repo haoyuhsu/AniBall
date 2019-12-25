@@ -26,11 +26,13 @@ public class SpecialEffect : MonoBehaviour
     AudioSource audioSource;
     public AudioClip burstClip;                           // 爆炸音效
     public AudioClip freezeClip;                          // 凍結音效
+    Ring ring;
 
     void Start()
     {
         colorSetting = GetComponent<ColorSetting> ();
         audioSource = GetComponent<AudioSource> ();
+        ring = GetComponent<Ring> ();
     }
 
     void FixedUpdate()
@@ -71,6 +73,7 @@ public class SpecialEffect : MonoBehaviour
             curPE = Instantiate(bombPE, transform.position, Quaternion.identity);        // 生成紅色炫光
             curPE.transform.parent = gameObject.transform;                               // 將生成Prefab放到ListPE的Hierarchy底下
             ListPE.Add(curPE);
+            ring.PlayRainbowParticle();
             StartCoroutine(CountDown());
         }
     }
@@ -83,6 +86,7 @@ public class SpecialEffect : MonoBehaviour
             curPE = Instantiate(gasPE, transform.position, Quaternion.identity);         // 生成綠色炫光
             curPE.transform.parent = gameObject.transform;                               // 將生成Prefab放到ListPE的Hierarchy底下
             ListPE.Add(curPE);
+            ring.PlayRainbowParticle();
             StartCoroutine(CountDown());
         }
     }
@@ -95,6 +99,7 @@ public class SpecialEffect : MonoBehaviour
         {
             ballState = "Normal";
             ClearParticleEffects();
+            ring.StopRainbowParticle();
         }
     }
 
@@ -108,6 +113,7 @@ public class SpecialEffect : MonoBehaviour
                 Burst(col);                    // 把人彈飛
                 ballState = "Normal";
                 ClearParticleEffects();
+                ring.StopRainbowParticle();
                 curPE = Instantiate(BurstPE, hitPoint, Quaternion.identity);    // 生成衝撞粒子效果
                 curPE.transform.parent = gameObject.transform;
                 ListPE.Add(curPE);
@@ -119,6 +125,7 @@ public class SpecialEffect : MonoBehaviour
                 StartCoroutine(ReverseControl(col));  // 把人控制顛倒
                 ballState = "Normal";
                 ClearParticleEffects();
+                ring.StopRainbowParticle();
                 curPE = Instantiate(FreezePE, hitPoint, Quaternion.identity);    // 生成衝撞粒子效果
                 curPE.transform.parent = gameObject.transform;
                 ListPE.Add(curPE);
@@ -182,6 +189,7 @@ public class SpecialEffect : MonoBehaviour
             curPE = Instantiate(magnetPE, transform.position, Quaternion.identity);        // 生成紫色炫光
             curPE.transform.parent = gameObject.transform;                                 // 將生成Prefab放到ListPE的Hierarchy底下
             ListPE.Add(curPE);
+            ring.PlayRainbowParticle();
             StartCoroutine(Magnetize());
         }
     }

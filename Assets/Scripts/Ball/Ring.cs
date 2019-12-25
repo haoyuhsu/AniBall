@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Ring : MonoBehaviour
 {
-    public ParticleSystem ringParticle;   // 圓環粒子效果
-    public GameObject bottom;             // 玩家底部的GameObject, 將圓環放到它Hierarchy底下
-    bool onFloor = false;                 // 是否接觸到地板
+    public ParticleSystem ringParticle;     // 圓環粒子效果 (玩家代表色)
+    public ParticleSystem rainbowParticle;  // 彩虹圓環 (當玩家吃到道具的時候)
+    public GameObject bottom;               // 玩家底部的GameObject, 將圓環放到它Hierarchy底下
+    bool onFloor = false;                   // 是否接觸到地板
     Quaternion orig_rotation;
     Vector3 orig_position;
     Vector3 orig_offset;
@@ -15,6 +16,11 @@ public class Ring : MonoBehaviour
     {
         ringParticle = Instantiate(ringParticle, bottom.transform.position, Quaternion.Euler(-90f, 0, 0));
         ringParticle.transform.parent = bottom.transform;
+
+        rainbowParticle = Instantiate(rainbowParticle, bottom.transform.position, Quaternion.Euler(-90f, 0, 0));
+        rainbowParticle.transform.parent = bottom.transform;
+        rainbowParticle.Stop();
+
         orig_rotation = bottom.transform.rotation;
         orig_position = bottom.transform.localPosition;
         orig_offset = bottom.transform.position - transform.position;
@@ -47,6 +53,16 @@ public class Ring : MonoBehaviour
     void OnCollisionExit(Collision col)
     {
         onFloor = false;
+    }
+
+    public void PlayRainbowParticle()
+    {
+        rainbowParticle.Play();
+    }
+
+    public void StopRainbowParticle()
+    {
+        rainbowParticle.Stop();
     }
 
 }
