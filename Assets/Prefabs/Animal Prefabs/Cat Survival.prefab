@@ -978,6 +978,7 @@ GameObject:
   - component: {fileID: 7488558942887715233}
   - component: {fileID: 566945754804045101}
   - component: {fileID: 9221150291956004821}
+  - component: {fileID: 6206681461645959607}
   - component: {fileID: 5742103580901033039}
   m_Layer: 0
   m_Name: Cat Survival
@@ -1160,6 +1161,19 @@ MonoBehaviour:
   NorthPoleMat: {fileID: 21300000, guid: 16157143b5af168498abf9d773de13bc, type: 3}
   SouthPoleMat: {fileID: 21300000, guid: 486fa48974c814f42bd38f4986852ab4, type: 3}
   MagneticImage: {fileID: 218384000263634394}
+--- !u!114 &6206681461645959607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568203370640993144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332a827155055ba4198e00335a0d8d2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!82 &5742103580901033039
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1712,6 +1726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 1630607258967202590}
+  playerColor: {fileID: 6206681461645959607}
 --- !u!114 &3168615568811317526
 MonoBehaviour:
   m_ObjectHideFlags: 0

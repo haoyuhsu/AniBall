@@ -667,6 +667,7 @@ GameObject:
   - component: {fileID: 3099910967821929992}
   - component: {fileID: 3099910967821929993}
   - component: {fileID: 3099910967821930039}
+  - component: {fileID: 1845286991233310734}
   - component: {fileID: 152568412784816706}
   m_Layer: 0
   m_Name: Dog Soccer
@@ -835,6 +836,19 @@ MonoBehaviour:
   NorthPoleMat: {fileID: 21300000, guid: 16157143b5af168498abf9d773de13bc, type: 3}
   SouthPoleMat: {fileID: 21300000, guid: 486fa48974c814f42bd38f4986852ab4, type: 3}
   MagneticImage: {fileID: 1578506351909989527}
+--- !u!114 &1845286991233310734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3099910967821930036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332a827155055ba4198e00335a0d8d2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!82 &152568412784816706
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1813,6 +1827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 1060696444842918400}
+  playerColor: {fileID: 1845286991233310734}
 --- !u!114 &3738095924955398152
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1322,6 +1322,7 @@ GameObject:
   - component: {fileID: 5819673120538513458}
   - component: {fileID: 5819673120538513459}
   - component: {fileID: 5819673120538513461}
+  - component: {fileID: 9052719182161029607}
   - component: {fileID: 4017319103723047940}
   m_Layer: 0
   m_Name: Racoon Soccer
@@ -1490,6 +1491,19 @@ MonoBehaviour:
   NorthPoleMat: {fileID: 21300000, guid: 16157143b5af168498abf9d773de13bc, type: 3}
   SouthPoleMat: {fileID: 21300000, guid: 486fa48974c814f42bd38f4986852ab4, type: 3}
   MagneticImage: {fileID: 3051008726513911181}
+--- !u!114 &9052719182161029607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5819673120538513462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332a827155055ba4198e00335a0d8d2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!82 &4017319103723047940
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1700,6 +1714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 991929580676710281}
+  playerColor: {fileID: 9052719182161029607}
 --- !u!114 &3502728526996667777
 MonoBehaviour:
   m_ObjectHideFlags: 0

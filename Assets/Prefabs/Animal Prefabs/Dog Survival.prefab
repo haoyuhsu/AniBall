@@ -555,6 +555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 8454897878827039321}
+  playerColor: {fileID: 2691460564521405192}
 --- !u!114 &5192069179168847953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,6 +668,7 @@ GameObject:
   - component: {fileID: 5369826934582730972}
   - component: {fileID: 5369826934582730973}
   - component: {fileID: 5369826934582730979}
+  - component: {fileID: 2691460564521405192}
   - component: {fileID: 7985389642292898898}
   m_Layer: 0
   m_Name: Dog Survival
@@ -848,6 +850,19 @@ MonoBehaviour:
   NorthPoleMat: {fileID: 21300000, guid: 16157143b5af168498abf9d773de13bc, type: 3}
   SouthPoleMat: {fileID: 21300000, guid: 486fa48974c814f42bd38f4986852ab4, type: 3}
   MagneticImage: {fileID: 8387838399712002627}
+--- !u!114 &2691460564521405192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5369826934582730976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332a827155055ba4198e00335a0d8d2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!82 &7985389642292898898
 AudioSource:
   m_ObjectHideFlags: 0

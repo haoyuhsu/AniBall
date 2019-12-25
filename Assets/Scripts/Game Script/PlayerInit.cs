@@ -64,6 +64,9 @@ public class PlayerInit : MonoBehaviour
         spawnPos += new Vector3(0, 1.5f, 0);                                                   // 將位置以y軸做offset, 拉高生成高度
         GameObject animalPrefab = Instantiate(animalToSpawn, spawnPos, Quaternion.identity);   // 生成Animal Prefab物件
         animalPrefab.transform.name = gameSetting.playersName[index];                          // 改Prefab名稱為原本設定的玩家名稱
+
+        /* 更改玩家代表顏色 */
+        animalPrefab.GetComponent<PlayerColor> ().myColor = gameSetting.ColorList[index];
         
         /* 更改玩家的控制按鍵 */
         BallMove ballMove = animalPrefab.GetComponent<BallMove> ();

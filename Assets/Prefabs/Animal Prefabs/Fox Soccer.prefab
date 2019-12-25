@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 1606185210704924369}
+  playerColor: {fileID: 119967088440320034}
 --- !u!114 &3103661065924316377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1027,6 +1028,7 @@ GameObject:
   - component: {fileID: 8648305952745566918}
   - component: {fileID: 8648305952745566920}
   - component: {fileID: 6870011182827110739}
+  - component: {fileID: 119967088440320034}
   - component: {fileID: 6844236888954018846}
   m_Layer: 0
   m_Name: Fox Soccer
@@ -1195,6 +1197,19 @@ MonoBehaviour:
   NorthPoleMat: {fileID: 21300000, guid: 16157143b5af168498abf9d773de13bc, type: 3}
   SouthPoleMat: {fileID: 21300000, guid: 486fa48974c814f42bd38f4986852ab4, type: 3}
   MagneticImage: {fileID: 2977076502548583239}
+--- !u!114 &119967088440320034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8648305952745566923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332a827155055ba4198e00335a0d8d2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!82 &6844236888954018846
 AudioSource:
   m_ObjectHideFlags: 0

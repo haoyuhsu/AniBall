@@ -12,6 +12,7 @@ public class GameSetting : MonoBehaviour
     public string[] playersName = new string[4];      // 玩家的名稱
     public string[] playersAnimal = new string[4];    // 玩家要選的動物
     public KeyCode[] KeyCodeList = new KeyCode[4];    // 玩家的噴射按鍵
+    public Color[] ColorList = new Color[4];          // 玩家各自代表色 (紅 藍 綠 黃)
     static GameSetting TheOnlyOneGameSetting;
 
     void Awake()
