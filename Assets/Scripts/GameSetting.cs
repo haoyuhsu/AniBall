@@ -24,6 +24,8 @@ public class GameSetting : MonoBehaviour
 
         TheOnlyOneGameSetting = this;
         GameObject.DontDestroyOnLoad( this.gameObject );
+
+        InitPlayersName();
     }
 
     void InitPlayersName()
