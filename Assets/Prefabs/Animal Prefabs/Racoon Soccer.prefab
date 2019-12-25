@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &42032328560096715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2280928799685026468}
+  m_Layer: 0
+  m_Name: RingParticle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2280928799685026468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42032328560096715}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.54, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5819673120538217494}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &850221647987665400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,6 +1353,7 @@ GameObject:
   - component: {fileID: 5819673120538513459}
   - component: {fileID: 5819673120538513461}
   - component: {fileID: 9052719182161029607}
+  - component: {fileID: 7757387830181901863}
   - component: {fileID: 4017319103723047940}
   m_Layer: 0
   m_Name: Racoon Soccer
@@ -1355,6 +1386,7 @@ Transform:
   - {fileID: 850221647987665403}
   - {fileID: 6038830711385951264}
   - {fileID: 1486532899257756392}
+  - {fileID: 2280928799685026468}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1504,6 +1536,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &7757387830181901863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5819673120538513462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef741cf12ec0e8c479d64addd309b6df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ringParticle: {fileID: 0}
+  bottom: {fileID: 42032328560096715}
 --- !u!82 &4017319103723047940
 AudioSource:
   m_ObjectHideFlags: 0

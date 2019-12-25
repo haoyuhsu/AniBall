@@ -2696,6 +2696,11 @@ MonoBehaviour:
   - {r: 0, g: 0.69129753, b: 1, a: 0.6901961}
   - {r: 0.54335755, g: 1, b: 0.25943398, a: 0.69803923}
   - {r: 1, g: 0.98805416, b: 0.28773582, a: 0.69803923}
+  ParticleList:
+  - {fileID: 210116811698815255, guid: 3ccc99dd7acc85540b3a2dac259dc768, type: 3}
+  - {fileID: 1185310710063151878, guid: 90ef797f325eecf45b12c65310edf36a, type: 3}
+  - {fileID: 4937158758471907964, guid: 0dce3b03440114042a94ff6d89249d35, type: 3}
+  - {fileID: 4868667644386217550, guid: 6cf41a293f1059940a4709716a1bfbbc, type: 3}
 --- !u!4 &692064590
 Transform:
   m_ObjectHideFlags: 0

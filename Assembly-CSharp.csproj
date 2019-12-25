@@ -92,6 +92,7 @@
      <Compile Include="Assets\Scripts\Ball\DeathCount.cs" />
      <Compile Include="Assets\Scripts\Ball\Magnetic.cs" />
      <Compile Include="Assets\Scripts\Ball\PlayerColor.cs" />
+     <Compile Include="Assets\Scripts\Ball\Ring.cs" />
      <Compile Include="Assets\Scripts\Ball\SpecialEffect.cs" />
      <Compile Include="Assets\Scripts\Camera Control\CameraControl.cs" />
      <Compile Include="Assets\Scripts\Game Script\Attractor.cs" />

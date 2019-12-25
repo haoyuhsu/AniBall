@@ -530,6 +530,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 8213018067999834180}
   aimSlider: {fileID: 3666397567724581064}
+--- !u!1 &4462694212661009742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2512028082800347681}
+  m_Layer: 0
+  m_Name: RingParticle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2512028082800347681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4462694212661009742}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.54, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8213018067999480932}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4529840770187659605
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,6 +962,7 @@ GameObject:
   - component: {fileID: 8213018067999834183}
   - component: {fileID: 8708142867143127823}
   - component: {fileID: 2103858520247325858}
+  - component: {fileID: 3195899833768750218}
   - component: {fileID: 4102511433918952479}
   m_Layer: 0
   m_Name: Fox Survival
@@ -964,6 +995,7 @@ Transform:
   - {fileID: 3666397569391228442}
   - {fileID: 7897611477692019994}
   - {fileID: 7082146820818144415}
+  - {fileID: 2512028082800347681}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1126,6 +1158,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &3195899833768750218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8213018067999834180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef741cf12ec0e8c479d64addd309b6df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ringParticle: {fileID: 0}
+  bottom: {fileID: 4462694212661009742}
 --- !u!82 &4102511433918952479
 AudioSource:
   m_ObjectHideFlags: 0

@@ -326,6 +326,36 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &1963978048824287375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 320700224371767264}
+  m_Layer: 0
+  m_Name: RingParticle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &320700224371767264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963978048824287375}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.54, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5819673120538217494}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3615207889381007778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1245,6 +1275,7 @@ GameObject:
   - component: {fileID: 5819673120538513459}
   - component: {fileID: 5819673120538513461}
   - component: {fileID: 5493395921923429342}
+  - component: {fileID: 7463265203848600114}
   - component: {fileID: 1353832406748151995}
   m_Layer: 0
   m_Name: Racoon Survival
@@ -1277,6 +1308,7 @@ Transform:
   - {fileID: 850221647987665403}
   - {fileID: 6038830711385951264}
   - {fileID: 2529733654209429682}
+  - {fileID: 320700224371767264}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1439,6 +1471,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &7463265203848600114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5819673120538513462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef741cf12ec0e8c479d64addd309b6df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ringParticle: {fileID: 0}
+  bottom: {fileID: 1963978048824287375}
 --- !u!82 &1353832406748151995
 AudioSource:
   m_ObjectHideFlags: 0

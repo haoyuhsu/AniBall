@@ -979,6 +979,7 @@ GameObject:
   - component: {fileID: 566945754804045101}
   - component: {fileID: 9221150291956004821}
   - component: {fileID: 6206681461645959607}
+  - component: {fileID: 2171934415812573718}
   - component: {fileID: 5742103580901033039}
   m_Layer: 0
   m_Name: Cat Survival
@@ -1012,6 +1013,7 @@ Transform:
   - {fileID: 29420616414080628}
   - {fileID: 8835706071387223159}
   - {fileID: 1136076783057538687}
+  - {fileID: 2434535521556357194}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1174,6 +1176,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &2171934415812573718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568203370640993144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef741cf12ec0e8c479d64addd309b6df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ringParticle: {fileID: 0}
+  bottom: {fileID: 4538253686570809125}
 --- !u!82 &5742103580901033039
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1612,6 +1628,36 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!1 &4538253686570809125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2434535521556357194}
+  m_Layer: 0
+  m_Name: RingParticle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2434535521556357194
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4538253686570809125}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.54, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1568203370641487704}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5643064459546222242
 GameObject:
   m_ObjectHideFlags: 0

@@ -65,8 +65,9 @@ public class PlayerInit : MonoBehaviour
         GameObject animalPrefab = Instantiate(animalToSpawn, spawnPos, Quaternion.identity);   // 生成Animal Prefab物件
         animalPrefab.transform.name = gameSetting.playersName[index];                          // 改Prefab名稱為原本設定的玩家名稱
 
-        /* 更改玩家代表顏色 */
+        /* 更改玩家代表顏色及圓環 */
         animalPrefab.GetComponent<PlayerColor> ().myColor = gameSetting.ColorList[index];
+        animalPrefab.GetComponent<Ring> ().ringParticle = gameSetting.ParticleList[index];
         
         /* 更改玩家的控制按鍵 */
         BallMove ballMove = animalPrefab.GetComponent<BallMove> ();

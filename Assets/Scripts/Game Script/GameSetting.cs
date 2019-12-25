@@ -9,10 +9,11 @@ public class GameSetting : MonoBehaviour
     public int roundTime = 30;
     public int maxScore = 3;
     public int maxDeath = 3;
-    public string[] playersName = new string[4];      // 玩家的名稱
-    public string[] playersAnimal = new string[4];    // 玩家要選的動物
-    public KeyCode[] KeyCodeList = new KeyCode[4];    // 玩家的噴射按鍵
-    public Color[] ColorList = new Color[4];          // 玩家各自代表色 (紅 藍 綠 黃)
+    public string[] playersName = new string[4];                    // 玩家的名稱
+    public string[] playersAnimal = new string[4];                  // 玩家要選的動物
+    public KeyCode[] KeyCodeList = new KeyCode[4];                  // 玩家的噴射按鍵
+    public Color[] ColorList = new Color[4];                        // 玩家各自代表色 (紅 藍 綠 黃)
+    public ParticleSystem[] ParticleList = new ParticleSystem[4];   // 玩家各自圓環 (紅 藍 綠 黃)
     static GameSetting TheOnlyOneGameSetting;
 
     void Awake()

@@ -668,6 +668,7 @@ GameObject:
   - component: {fileID: 3099910967821929993}
   - component: {fileID: 3099910967821930039}
   - component: {fileID: 1845286991233310734}
+  - component: {fileID: 2548308563551976335}
   - component: {fileID: 152568412784816706}
   m_Layer: 0
   m_Name: Dog Soccer
@@ -700,6 +701,7 @@ Transform:
   - {fileID: 7817857411176293690}
   - {fileID: 5451185087065976382}
   - {fileID: 1719647949694080865}
+  - {fileID: 6364399194400927640}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -849,6 +851,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &2548308563551976335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3099910967821930036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef741cf12ec0e8c479d64addd309b6df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ringParticle: {fileID: 0}
+  bottom: {fileID: 5143334930759792887}
 --- !u!82 &152568412784816706
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1308,6 +1324,36 @@ MonoBehaviour:
   MyPlayerTransform: {fileID: 3099910967821767188}
   alignNotLook: 1
   offset: 1.6
+--- !u!1 &5143334930759792887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6364399194400927640}
+  m_Layer: 0
+  m_Name: RingParticle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6364399194400927640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5143334930759792887}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.54, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3099910967821767188}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5424734865690432171
 GameObject:
   m_ObjectHideFlags: 0
