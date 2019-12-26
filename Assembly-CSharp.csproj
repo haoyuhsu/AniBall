@@ -110,7 +110,7 @@
      <Compile Include="Assets\Scripts\Game Script\Respawn.cs" />
      <Compile Include="Assets\Scripts\Game Script\Score.cs" />
      <Compile Include="Assets\Scripts\Game Script\Timer.cs" />
-     <Compile Include="Assets\Scripts\Game Script\up.cs" />
+     <Compile Include="Assets\Scripts\Game Script\Up.cs" />
      <Compile Include="Assets\Scripts\Gas\Gas.cs" />
      <Compile Include="Assets\Scripts\Gas\GasSpawn.cs" />
      <Compile Include="Assets\Scripts\Grenade\Grenade.cs" />
