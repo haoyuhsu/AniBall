@@ -13,6 +13,7 @@ public class PlayerInit : MonoBehaviour
     public GameObject survivalCat;
     public GameObject soccerDog;
     public GameObject survivalDog;
+    
     public string TypeOfGame;
     public GameObject PlayersObject;    // 玩家們
     int numPlayers;
@@ -20,6 +21,8 @@ public class PlayerInit : MonoBehaviour
     FloorController floorController;
 
     public GameObject Magnets;
+    public GameObject spotlight;
+    public GameObject spotlightObject;
 
     void Start()
     {
@@ -101,6 +104,10 @@ public class PlayerInit : MonoBehaviour
         }
         spawnPos += new Vector3(0, 1.5f, 0);                                                   // 將位置以y軸做offset, 拉高生成高度
         GameObject animalPrefab = Instantiate(animalToSpawn, spawnPos, Quaternion.identity);   // 生成Animal Prefab物件
+        GameObject SpotlightPrefab = Instantiate(spotlight,spotlightObject.transform);
+        Spotlight spotlightComponent = SpotlightPrefab.GetComponent<Spotlight>();
+        spotlightComponent.Animal = animalPrefab;
+        SpotlightPrefab.SetActive(false);
         animalPrefab.transform.name = gameSetting.playersName[index];                          // 改Prefab名稱為原本設定的玩家名稱
 
         /* 更改玩家代表顏色及圓環 */

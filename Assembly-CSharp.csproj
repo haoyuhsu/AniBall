@@ -95,6 +95,7 @@
      <Compile Include="Assets\Scripts\Ball\PlayerSoundController.cs" />
      <Compile Include="Assets\Scripts\Ball\Ring.cs" />
      <Compile Include="Assets\Scripts\Ball\SpecialEffect.cs" />
+     <Compile Include="Assets\Scripts\Ball\Spotlight.cs" />
      <Compile Include="Assets\Scripts\Camera Control\CameraControl.cs" />
      <Compile Include="Assets\Scripts\Game Script\Attractor.cs" />
      <Compile Include="Assets\Scripts\Game Script\Barrel.cs" />

@@ -13,6 +13,8 @@ public class GameOver : MonoBehaviour
     public GameObject Camera;
     public float RotateSpeed;
     public float CameraDis;
+    public GameObject Spotlights;
+    public GameObject Directlight;
     float Angle = 0;
     Vector3 WinnerPos;
     float Distance;
@@ -40,7 +42,7 @@ public class GameOver : MonoBehaviour
         if (TypeOfGame == "Soccer Game")
         {
             if (soccerScore != null){
-                //Winner = 
+                
                 SoccerGameOver();
             }
                 
@@ -97,14 +99,27 @@ public class GameOver : MonoBehaviour
         /* 依照分數決定印出的結果 */
         float team1Score = soccerScore.team1Score;
         float team2Score = soccerScore.team2Score;
-
+        int numPlayers = FindObjectOfType<GameSetting>().numPlayers;
+        Directlight.SetActive(false);
         if (team1Score > team2Score)
         {
             resultText.text = "Team 1 Win!";
+            Spotlights.transform.GetChild(0).gameObject.SetActive(true);
+            if(numPlayers==4){
+                Spotlights.transform.GetChild(1).gameObject.SetActive(true);
+            }
         }
         else if (team1Score < team2Score)
         {
             resultText.text = "Team 2 Win!";
+            if(numPlayers==4){
+                Spotlights.transform.GetChild(2).gameObject.SetActive(true);
+                Spotlights.transform.GetChild(3).gameObject.SetActive(true);
+            }
+            else if(numPlayers==2){
+                Spotlights.transform.GetChild(1).gameObject.SetActive(true);
+            }
+            
         }
         else
         {
