@@ -9,14 +9,57 @@ public class GameOver : MonoBehaviour
     public Score soccerScore;
     DeathCount deathCount;
 
+    GameObject Winner = null;
+    public GameObject Camera;
+    bool Enable = false;
+    float Angle = 0;
+    Vector3 WinnerPos;
+    float Distance;
+    float Radius;
+
     void Start()
     {
         gameoverCanvas.enabled = false;     // 初始時把結束Canvas關閉
+        //-----
+        //Distance = Vector3.Distance(WinnerPos , Camera.transform.position);
+        //WinnerPos = Winner.transform.position;
+        //Radius = Vector2.Distance(new Vector2(WinnerPos.x,WinnerPos.z),new Vector2(transform.position.x,transform.position.z));
     }
 
+    void FixedUpdate(){
+        if(Winner!=null){
+            WinnerPos = Winner.transform.position;
+            Distance = Vector3.Distance(WinnerPos , Camera.transform.position);
+            Radius = Vector2.Distance(new Vector2(WinnerPos.x,WinnerPos.z),new Vector2(Camera.transform.position.x,Camera.transform.position.z));
+            //Debug.Log("dis "+Distance);
+        }
+    }
+    //-------
+    private IEnumerator GetClose()
+    {
+        Debug.Log(Radius);
+        while (Radius >= 1)
+        {
+            Camera.transform.Translate(Vector3.Normalize(WinnerPos+(new Vector3(0,5,0)) - Camera.transform.position)*0.5f);
+            Camera.transform.LookAt(WinnerPos);
+            yield return 0;
+        }
+        Angle = Mathf.Acos((Camera.transform.position.x - WinnerPos.x)/Radius);
+        Camera.transform.rotation = Quaternion.LookRotation(WinnerPos);
+        Enable = true;
+        yield return 0;
+    }
+    void Update(){
+        if(Enable){
+            Angle += Time.deltaTime*0.7f;
+            Camera.transform.position = new Vector3(Mathf.Cos(-Angle)*Radius + WinnerPos.x , Camera.transform.position.y , Mathf.Sin(-Angle)*Radius + WinnerPos.z);
+            Camera.transform.LookAt(WinnerPos);
+        }
+    }
+    //-------
     public void OpenGameOverCanvas(string TypeOfGame)
     {
-        Time.timeScale = 0f;    // 結束時將時間停止
+        //Time.timeScale = 0f;    // 結束時將時間停止
 
         /* 根據遊戲類型去決定Game Over形式 */
         if (TypeOfGame == "Soccer Game")
@@ -27,8 +70,15 @@ public class GameOver : MonoBehaviour
         if (TypeOfGame == "Survival Game")
         {
             deathCount = FindObjectOfType<DeathCount> ();
-            if (deathCount != null)
+            if (deathCount != null){
+                Winner = deathCount.gameObject;
+                WinnerPos = Winner.transform.position;
+                Distance = Vector3.Distance(WinnerPos , Camera.transform.position);
+                Radius = Vector2.Distance(new Vector2(WinnerPos.x,WinnerPos.z),new Vector2(Camera.transform.position.x,Camera.transform.position.z));
+                StartCoroutine(GetClose());
                 SurvivalGameOver();
+            }
+                
         }
         gameoverCanvas.enabled = true;    // 把結束Canvas打開
     }
