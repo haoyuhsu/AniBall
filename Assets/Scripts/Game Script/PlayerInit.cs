@@ -19,6 +19,8 @@ public class PlayerInit : MonoBehaviour
     GameSetting gameSetting;
     FloorController floorController;
 
+    public GameObject Magnets;
+
     void Start()
     {
         gameSetting = FindObjectOfType<GameSetting> ();
@@ -39,10 +41,10 @@ public class PlayerInit : MonoBehaviour
         for (int i=0; i<numPlayers; i++)
         {
             string animalName = gameSetting.playersAnimal[i];
-            if (animalName == "Fox")  GeneratePlayer(i, soccerFox);
-            else if (animalName == "Racoon")  GeneratePlayer(i, soccerRacoon);
-            else if (animalName == "Cat")  GeneratePlayer(i, soccerCat);
-            else if (animalName == "Dog")  GeneratePlayer(i, soccerDog);
+            if (animalName == "Fox")  GeneratePlayer_Soccer(i, soccerFox);
+            else if (animalName == "Racoon")  GeneratePlayer_Soccer(i, soccerRacoon);
+            else if (animalName == "Cat")  GeneratePlayer_Soccer(i, soccerCat);
+            else if (animalName == "Dog")  GeneratePlayer_Soccer(i, soccerDog);
         }
     }
 
@@ -61,6 +63,42 @@ public class PlayerInit : MonoBehaviour
     void GeneratePlayer(int index, GameObject animalToSpawn)
     {
         Vector3 spawnPos = floorController.GetRandomFloorPosition();                           // 取得隨機生成的位置
+        spawnPos += new Vector3(0, 1.5f, 0);                                                   // 將位置以y軸做offset, 拉高生成高度
+        GameObject animalPrefab = Instantiate(animalToSpawn, spawnPos, Quaternion.identity);   // 生成Animal Prefab物件
+        animalPrefab.transform.name = gameSetting.playersName[index];                          // 改Prefab名稱為原本設定的玩家名稱
+
+        /* 更改玩家代表顏色及圓環 */
+        animalPrefab.GetComponent<PlayerColor> ().myColor = gameSetting.ColorList[index];
+        animalPrefab.GetComponent<Ring> ().ringParticle = gameSetting.ParticleList[index];
+        
+        /* 更改玩家的控制按鍵 */
+        BallMove ballMove = animalPrefab.GetComponent<BallMove> ();
+        ballMove.vertical_axis = "Player" + (index+1) + "_Vertical";
+        ballMove.horizontal_axis = "Player" + (index+1) + "_Horizontal";
+        ballMove.shoot = gameSetting.KeyCodeList[index];
+
+        /* 將此Prefab放到Players的Hierarchy下面 */
+        animalPrefab.transform.parent = PlayersObject.transform;
+    }
+
+    void GeneratePlayer_Soccer(int index, GameObject animalToSpawn){
+        Vector3 spawnPos = Vector3.zero;
+        
+        if(numPlayers==2){
+            if(index==0){
+                spawnPos = Magnets.transform.GetChild(0).position;
+                spawnPos += Magnets.transform.GetChild(1).position;
+                spawnPos /= 2;
+            }
+            if(index==1){
+                spawnPos = Magnets.transform.GetChild(2).position;
+                spawnPos += Magnets.transform.GetChild(3).position;
+                spawnPos /= 2;
+            }
+        }
+        else if(numPlayers==4){
+            spawnPos = Magnets.transform.GetChild(index).position;
+        }
         spawnPos += new Vector3(0, 1.5f, 0);                                                   // 將位置以y軸做offset, 拉高生成高度
         GameObject animalPrefab = Instantiate(animalToSpawn, spawnPos, Quaternion.identity);   // 生成Animal Prefab物件
         animalPrefab.transform.name = gameSetting.playersName[index];                          // 改Prefab名稱為原本設定的玩家名稱
