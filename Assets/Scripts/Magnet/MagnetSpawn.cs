@@ -8,7 +8,7 @@ public class MagnetSpawn : MonoBehaviour
     FloorController floorController;
     Vector3 spawnPos;
     float respawnHeight = 1.0f;
-    Quaternion magnetRotation = Quaternion.Euler (0, 0, -22f);
+    Quaternion magnetRotation = Quaternion.Euler (42f, 35f, -173f);
     float waitTime;
     public float min = 10.0f;
     public float max = 20.0f;

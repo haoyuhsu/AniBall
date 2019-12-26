@@ -1354,6 +1354,7 @@ GameObject:
   - component: {fileID: 5819673120538513461}
   - component: {fileID: 9052719182161029607}
   - component: {fileID: 7757387830181901863}
+  - component: {fileID: 7772154485083783027}
   - component: {fileID: 4017319103723047940}
   m_Layer: 0
   m_Name: Racoon Soccer
@@ -1427,8 +1428,6 @@ MonoBehaviour:
   launchForce: 0
   launchForceIncrement: 0.5
   lockOnAir: 1
-  shootClip: {fileID: 8300000, guid: 3bb00c2bb386a354c94cc0cc25b8fe04, type: 3}
-  inflateClip: {fileID: 8300000, guid: 17574092e2c59d045b85e3c32659e497, type: 3}
 --- !u!114 &5819673120538513470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1454,8 +1453,6 @@ MonoBehaviour:
   BurstPE: {fileID: 7810800350616811068, guid: e6d0a229fe6727b4aaa3564e79b81c64, type: 3}
   FreezePE: {fileID: 5813270272649489235, guid: bfbbb06e52143db438577127404e176b,
     type: 3}
-  burstClip: {fileID: 8300000, guid: f956457e257603844b3216437c162c83, type: 3}
-  freezeClip: {fileID: 8300000, guid: e245ec087333e0d4d81f035641b7fda7, type: 3}
 --- !u!114 &5819673120538513471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1549,7 +1546,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ringParticle: {fileID: 0}
+  rainbowParticle: {fileID: 105726594461036720, guid: e61bd6973074d6a4599070da240f7581,
+    type: 3}
   bottom: {fileID: 42032328560096715}
+--- !u!114 &7772154485083783027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5819673120538513462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ce4bd0f09c395439caadc9b2b11341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootClip: {fileID: 8300000, guid: 3bb00c2bb386a354c94cc0cc25b8fe04, type: 3}
+  inflateClip: {fileID: 8300000, guid: 17574092e2c59d045b85e3c32659e497, type: 3}
+  burstClip: {fileID: 8300000, guid: f956457e257603844b3216437c162c83, type: 3}
+  freezeClip: {fileID: 8300000, guid: e245ec087333e0d4d81f035641b7fda7, type: 3}
 --- !u!82 &4017319103723047940
 AudioSource:
   m_ObjectHideFlags: 0

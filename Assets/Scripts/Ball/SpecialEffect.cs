@@ -23,14 +23,14 @@ public class SpecialEffect : MonoBehaviour
     GameObject curPE;                                     // 目前生成的粒子效果
     List<GameObject> ListPE = new List<GameObject>();     // 存著所有生成粒子效果的物件     
     ColorSetting colorSetting;
-    AudioSource audioSource;
-    public AudioClip burstClip;                           // 爆炸音效
-    public AudioClip freezeClip;                          // 凍結音效
+    Ring ring;
+    PlayerSoundController soundController;
 
     void Start()
     {
-        colorSetting = GetComponent<ColorSetting> ();
-        audioSource = GetComponent<AudioSource> ();
+        colorSetting = this.gameObject.GetComponent<ColorSetting> ();
+        ring = this.gameObject.GetComponent<Ring> ();
+        soundController = this.gameObject.GetComponent<PlayerSoundController> ();
     }
 
     void FixedUpdate()
@@ -71,6 +71,7 @@ public class SpecialEffect : MonoBehaviour
             curPE = Instantiate(bombPE, transform.position, Quaternion.identity);        // 生成紅色炫光
             curPE.transform.parent = gameObject.transform;                               // 將生成Prefab放到ListPE的Hierarchy底下
             ListPE.Add(curPE);
+            ring.PlayRainbowParticle();
             StartCoroutine(CountDown());
         }
     }
@@ -83,6 +84,7 @@ public class SpecialEffect : MonoBehaviour
             curPE = Instantiate(gasPE, transform.position, Quaternion.identity);         // 生成綠色炫光
             curPE.transform.parent = gameObject.transform;                               // 將生成Prefab放到ListPE的Hierarchy底下
             ListPE.Add(curPE);
+            ring.PlayRainbowParticle();
             StartCoroutine(CountDown());
         }
     }
@@ -95,6 +97,7 @@ public class SpecialEffect : MonoBehaviour
         {
             ballState = "Normal";
             ClearParticleEffects();
+            ring.StopRainbowParticle();
         }
     }
 
@@ -108,10 +111,11 @@ public class SpecialEffect : MonoBehaviour
                 Burst(col);                    // 把人彈飛
                 ballState = "Normal";
                 ClearParticleEffects();
+                ring.StopRainbowParticle();
                 curPE = Instantiate(BurstPE, hitPoint, Quaternion.identity);    // 生成衝撞粒子效果
                 curPE.transform.parent = gameObject.transform;
                 ListPE.Add(curPE);
-                audioSource.PlayOneShot(burstClip, 1.0f);      // 播放炸飛音效
+                soundController.PlayBurstClip();      // 播放炸飛音效
             }
             else if (ballState == "isGas")
             {
@@ -119,10 +123,11 @@ public class SpecialEffect : MonoBehaviour
                 StartCoroutine(ReverseControl(col));  // 把人控制顛倒
                 ballState = "Normal";
                 ClearParticleEffects();
+                ring.StopRainbowParticle();
                 curPE = Instantiate(FreezePE, hitPoint, Quaternion.identity);    // 生成衝撞粒子效果
                 curPE.transform.parent = gameObject.transform;
                 ListPE.Add(curPE);
-                audioSource.PlayOneShot(freezeClip, 1.0f);     // 播放凍結音效
+                soundController.PlayFreezeClip();     // 播放凍結音效
             }
         }
     }
@@ -182,6 +187,7 @@ public class SpecialEffect : MonoBehaviour
             curPE = Instantiate(magnetPE, transform.position, Quaternion.identity);        // 生成紫色炫光
             curPE.transform.parent = gameObject.transform;                                 // 將生成Prefab放到ListPE的Hierarchy底下
             ListPE.Add(curPE);
+            ring.PlayRainbowParticle();
             StartCoroutine(Magnetize());
         }
     }
@@ -199,6 +205,7 @@ public class SpecialEffect : MonoBehaviour
         attractor.isBall = true;
         rb.mass = 1;
         ballState = "Normal";
+        ring.StopRainbowParticle();
         ClearParticleEffects();
     }
 
