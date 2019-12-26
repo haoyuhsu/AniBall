@@ -41,6 +41,7 @@ public class PlayerInit : MonoBehaviour
 
     void SoccerGameInit()
     {
+        Debug.Log(numPlayers);
         for (int i=0; i<numPlayers; i++)
         {
             string animalName = gameSetting.playersAnimal[i];

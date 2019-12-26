@@ -76,10 +76,10 @@ public class SettingUI : MonoBehaviour
 
     public void SetAnimal(int index)
     {
-        if(playersAnimalsIndex[index] == 0)gameSetting.playersAnimal[index] = "fox";
-        else if(playersAnimalsIndex[index] == 1)gameSetting.playersAnimal[index] = "cat";
-        else if(playersAnimalsIndex[index] == 2)gameSetting.playersAnimal[index] = "dog";
-        else if(playersAnimalsIndex[index] == 3)gameSetting.playersAnimal[index] = "raccoon";
+        if(playersAnimalsIndex[index] == 0)gameSetting.playersAnimal[index] = "Fox";
+        else if(playersAnimalsIndex[index] == 1)gameSetting.playersAnimal[index] = "Cat";
+        else if(playersAnimalsIndex[index] == 2)gameSetting.playersAnimal[index] = "Dog";
+        else if(playersAnimalsIndex[index] == 3)gameSetting.playersAnimal[index] = "Racoon";
         SetPlayerAnimalImg(index);
     }
 
