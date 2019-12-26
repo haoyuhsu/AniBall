@@ -106,14 +106,14 @@ public class GameOver : MonoBehaviour
             resultText.text = "Team 1 Win!";
             Spotlights.transform.GetChild(0).gameObject.SetActive(true);
             if(numPlayers==4){
-                Spotlights.transform.GetChild(1).gameObject.SetActive(true);
+                Spotlights.transform.GetChild(2).gameObject.SetActive(true);
             }
         }
         else if (team1Score < team2Score)
         {
             resultText.text = "Team 2 Win!";
             if(numPlayers==4){
-                Spotlights.transform.GetChild(2).gameObject.SetActive(true);
+                Spotlights.transform.GetChild(1).gameObject.SetActive(true);
                 Spotlights.transform.GetChild(3).gameObject.SetActive(true);
             }
             else if(numPlayers==2){

@@ -100,7 +100,15 @@ public class PlayerInit : MonoBehaviour
             }
         }
         else if(numPlayers==4){
-            spawnPos = Magnets.transform.GetChild(index).position;
+            if(index==1){
+                spawnPos = Magnets.transform.GetChild(2).position;
+            }
+            else if(index==2){
+                spawnPos = Magnets.transform.GetChild(1).position;
+            }
+            else {
+                spawnPos = Magnets.transform.GetChild(index).position;
+            }
         }
         spawnPos += new Vector3(0, 1.5f, 0);                                                   // 將位置以y軸做offset, 拉高生成高度
         GameObject animalPrefab = Instantiate(animalToSpawn, spawnPos, Quaternion.identity);   // 生成Animal Prefab物件
