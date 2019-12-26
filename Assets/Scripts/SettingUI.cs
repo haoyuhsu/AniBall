@@ -32,10 +32,7 @@ public class SettingUI : MonoBehaviour
         SetMaxScore();
         SetMaxDeath();
         SetTimeLimit();
-        for (int i=0; i<4; i++)
-        {
-            SetAnimal(i);
-        }
+        
     }
 
     public void SetNumPlayer()
@@ -88,7 +85,7 @@ public class SettingUI : MonoBehaviour
         gameSetting.playersName[index] = PlayersNameList[index].text;
     }
     public void SetGameMode(int mode){
-        //gameSetting.gameMode = mode;
+        gameSetting.gameMode = mode;
     }
     public void SetPlayerBtn(int index)
     {
@@ -138,5 +135,36 @@ public class SettingUI : MonoBehaviour
     public void SetPlayerAnimalImg(int index){
         AnimalsImg[index].sprite = AnimalsSprite[playersAnimalsIndex[index]];
         AnimalsNameImg[index].sprite = AnimalsNameSprite[playersAnimalsIndex[index]];
+    }
+    public void setNoplay(){
+        playersAnimalsIndex[2] = 2;
+        playersAnimalsIndex[3] = 3;
+        chooseBtn[4].interactable = true;
+        chooseBtn[5].interactable = true;
+        chooseBtn[6].interactable = true;
+        chooseBtn[7].interactable = true;
+        PlayersNameList[2].interactable = true;
+        PlayersNameList[3].interactable = true;
+        if(gameSetting.numPlayers == 2){
+            playersAnimalsIndex[2] = 4;
+            playersAnimalsIndex[3] = 4;
+            chooseBtn[4].interactable = false;
+            chooseBtn[5].interactable = false;
+            chooseBtn[6].interactable = false;
+            chooseBtn[7].interactable = false;
+            PlayersNameList[2].interactable = false;
+            PlayersNameList[3].interactable = false;
+
+        }
+        else if(gameSetting.numPlayers == 3){
+            playersAnimalsIndex[2] = 4;
+            chooseBtn[6].interactable = false;
+            chooseBtn[7].interactable = false;
+            PlayersNameList[2].interactable = false;
+        }
+        for (int i=0; i<4; i++)
+        {
+            SetAnimal(i);
+        }
     }
 }

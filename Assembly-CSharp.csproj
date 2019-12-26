@@ -135,6 +135,7 @@
      <Compile Include="Assets\Scripts\Menu\OpenExit.cs" />
      <Compile Include="Assets\Scripts\Menu\OpenMauual.cs" />
      <Compile Include="Assets\Scripts\Menu\PlayBtnPos.cs" />
+     <Compile Include="Assets\Scripts\Menu\playOnes.cs" />
      <Compile Include="Assets\Scripts\Mesh Deformation\MeshDeformer.cs" />
      <Compile Include="Assets\Scripts\Mesh Deformation\TrigMeshDeformer.cs" />
      <Compile Include="Assets\Scripts\Not Using\Cube\Cube.cs" />

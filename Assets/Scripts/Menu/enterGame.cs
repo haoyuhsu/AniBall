@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class enterGame : MonoBehaviour
 {
+    public GameSetting gg;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,8 +16,8 @@ public class enterGame : MonoBehaviour
     {
         
     }
-    public void enterG(int index){
-        if(index == 0){
+    public void enterG(){
+        if(gg.gameMode == 0){
             SceneManager.LoadScene("SoccerGame");
         }
         else{

@@ -9,6 +9,7 @@ public class GameSetting : MonoBehaviour
     public int roundTime = 30;
     public int maxScore = 3;
     public int maxDeath = 3;
+    public int gameMode = 0;
     public string[] playersName = new string[4];                    // 玩家的名稱
     public string[] playersAnimal = new string[4];                  // 玩家要選的動物
     public KeyCode[] KeyCodeList = new KeyCode[4];                  // 玩家的噴射按鍵
