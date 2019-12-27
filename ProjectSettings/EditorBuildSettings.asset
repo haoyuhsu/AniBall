@@ -11,13 +11,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SurvivalGame.unity
     guid: cfe2b30cfca571c42b6d1289d6554654
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SoccerGameSetting.unity
     guid: 60b47b1680af7be4dac0ff13d9238245
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SurvivalGameSetting.unity
     guid: 78e793a76d3c29244b753a648d3c3cdf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Intro.unity
     guid: 2a7db60e7e31a3c409a717412a110e84
+  - enabled: 1
+    path: Assets/Scenes/BeginAnimationScene.unity
+    guid: 374640118a66c7b45bbcdde9edb4b041
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 4a0949316b5a80445b9eeb917d705fcc
   m_configObjects: {}

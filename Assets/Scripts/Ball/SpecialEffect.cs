@@ -65,7 +65,7 @@ public class SpecialEffect : MonoBehaviour
 
     public void GrenadeTrigger()
     {
-        if (ballState == "Normal" || ballState == "isBomb")
+        if (ballState == "Normal")
         {
             curState = ballState = "isBomb";
             curPE = Instantiate(bombPE, transform.position, Quaternion.identity);        // 生成紅色炫光
@@ -78,7 +78,7 @@ public class SpecialEffect : MonoBehaviour
 
     public void GasTrigger()
     {
-        if (ballState == "Normal" || ballState == "isGas")
+        if (ballState == "Normal")
         {
             curState = ballState = "isGas";
             curPE = Instantiate(gasPE, transform.position, Quaternion.identity);         // 生成綠色炫光
