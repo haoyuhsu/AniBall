@@ -20,6 +20,9 @@ public class SettingUI : MonoBehaviour
     public Button[] chooseBtn;
     public InputField[] PlayersNameList = new InputField[4];
     GameSetting gameSetting;
+    public GameObject[] AniImgNoplay;
+    public Image modeBG;
+    public Sprite[] modeBGSprite;
 
     void Start()
     {
@@ -86,6 +89,7 @@ public class SettingUI : MonoBehaviour
     }
     public void SetGameMode(int mode){
         gameSetting.gameMode = mode;
+        modeBG.sprite = modeBGSprite[mode];
     }
     public void SetPlayerBtn(int index)
     {
@@ -96,9 +100,18 @@ public class SettingUI : MonoBehaviour
     }
     public void SetLifeBtn(int index)
     {
-        if(gameSetting.maxDeath + index>0){
-            gameSetting.maxDeath += index;
-            maxDeathTxt.text = gameSetting.maxDeath.ToString();
+
+        if(gameSetting.gameMode == 1){
+            if(gameSetting.maxDeath + index>0){
+                gameSetting.maxDeath += index;
+                maxDeathTxt.text = gameSetting.maxDeath.ToString();
+            }
+        }
+        else{
+            if(gameSetting.maxScore + index>0){
+                gameSetting.maxScore += index;
+                maxDeathTxt.text = gameSetting.maxScore.ToString();
+            }
         }
     }
     public void SetTimeBtn(int index)
@@ -135,8 +148,12 @@ public class SettingUI : MonoBehaviour
     public void SetPlayerAnimalImg(int index){
         AnimalsImg[index].sprite = AnimalsSprite[playersAnimalsIndex[index]];
         AnimalsNameImg[index].sprite = AnimalsNameSprite[playersAnimalsIndex[index]];
+        AnimalsImg[index].SetNativeSize();
+        AnimalsNameImg[index].SetNativeSize();
     }
     public void setNoplay(){
+        AniImgNoplay[0].SetActive(true);
+        AniImgNoplay[1].SetActive(true);
         playersAnimalsIndex[2] = 2;
         playersAnimalsIndex[3] = 3;
         chooseBtn[4].interactable = true;
@@ -146,6 +163,8 @@ public class SettingUI : MonoBehaviour
         PlayersNameList[2].interactable = true;
         PlayersNameList[3].interactable = true;
         if(gameSetting.numPlayers == 2){
+            AniImgNoplay[0].SetActive(false);
+            AniImgNoplay[1].SetActive(false);
             playersAnimalsIndex[2] = 4;
             playersAnimalsIndex[3] = 4;
             chooseBtn[4].interactable = false;
@@ -157,10 +176,11 @@ public class SettingUI : MonoBehaviour
 
         }
         else if(gameSetting.numPlayers == 3){
-            playersAnimalsIndex[2] = 4;
+            AniImgNoplay[1].SetActive(false);
+            playersAnimalsIndex[3] = 4;
             chooseBtn[6].interactable = false;
             chooseBtn[7].interactable = false;
-            PlayersNameList[2].interactable = false;
+            PlayersNameList[3].interactable = false;
         }
         for (int i=0; i<4; i++)
         {

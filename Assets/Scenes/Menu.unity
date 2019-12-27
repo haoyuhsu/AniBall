@@ -6009,7 +6009,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 116, y: 64}
-  m_SizeDelta: {x: 70, y: 90}
+  m_SizeDelta: {x: 80, y: 77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &238210721
 MonoBehaviour:
@@ -10337,7 +10337,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 116, y: -95}
-  m_SizeDelta: {x: 70, y: 90}
+  m_SizeDelta: {x: 71, y: 89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &392147086
 MonoBehaviour:
@@ -18046,7 +18046,7 @@ GameObject:
   - component: {fileID: 583058125}
   - component: {fileID: 583058124}
   m_Layer: 5
-  m_Name: BG
+  m_Name: SettingBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19589,7 +19589,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 116, y: -36}
-  m_SizeDelta: {x: 32, y: 15}
+  m_SizeDelta: {x: 31, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &633195034
 MonoBehaviour:
@@ -20306,7 +20306,7 @@ GameObject:
   - component: {fileID: 655950706}
   - component: {fileID: 655950705}
   m_Layer: 5
-  m_Name: BG
+  m_Name: ReadyBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23792,7 +23792,7 @@ GameObject:
   - component: {fileID: 773088534}
   - component: {fileID: 773088533}
   m_Layer: 5
-  m_Name: BG
+  m_Name: ModeBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35497,7 +35497,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -108.98999, y: -36}
-  m_SizeDelta: {x: 32, y: 15}
+  m_SizeDelta: {x: 31, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &993388467
 MonoBehaviour:
@@ -38017,7 +38017,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -108.98999, y: -95}
-  m_SizeDelta: {x: 70, y: 90}
+  m_SizeDelta: {x: 72, y: 87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1058155852
 MonoBehaviour:
@@ -42806,7 +42806,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -108.98999, y: 69}
-  m_SizeDelta: {x: 70, y: 90}
+  m_SizeDelta: {x: 86, y: 93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1204825575
 MonoBehaviour:
@@ -47369,7 +47369,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 116, y: 127}
-  m_SizeDelta: {x: 32, y: 15}
+  m_SizeDelta: {x: 31, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1354259184
 MonoBehaviour:
@@ -51412,7 +51412,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -108.99, y: 127}
-  m_SizeDelta: {x: 32, y: 15}
+  m_SizeDelta: {x: 31, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1533048612
 MonoBehaviour:
@@ -53636,6 +53636,13 @@ MonoBehaviour:
   - {fileID: 1452066279}
   - {fileID: 698758107}
   - {fileID: 1995563034}
+  AniImgNoplay:
+  - {fileID: 993388465}
+  - {fileID: 633195032}
+  modeBG: {fileID: 583058125}
+  modeBGSprite:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1625768471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70942,7 +70949,7 @@ GameObject:
   - component: {fileID: 2064633717}
   - component: {fileID: 2064633719}
   m_Layer: 5
-  m_Name: BG
+  m_Name: MenuBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
