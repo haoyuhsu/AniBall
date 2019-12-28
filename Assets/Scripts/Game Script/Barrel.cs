@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Barrel : MonoBehaviour
 {
+    public MusicController musicController;
     FloorController floorController;
     Vector3 originalPos;
     Quaternion originalRot;
@@ -13,7 +14,8 @@ public class Barrel : MonoBehaviour
     Vector3 player2Side = new Vector3(2.64f, 2.93f, -1.85f);    // 重生位置靠近Player 2
     Vector3 spawnPos;             // 重生位置
     float groundHeight;           // 地板高度
-    bool isRespawning = false;
+    public bool isRespawning = false;
+    public GameObject Players;
  
     void Start()
     {
@@ -23,6 +25,8 @@ public class Barrel : MonoBehaviour
         originalRot = barrelTransform.rotation;
         floorController = FindObjectOfType<FloorController> ();
         groundHeight = floorController.transform.position.y;
+
+        musicController.PlayGameStartWhistle();
     }
 
     void FixedUpdate()
@@ -31,18 +35,19 @@ public class Barrel : MonoBehaviour
         if (barrelTransform.position.y <= groundHeight-10 && !isRespawning)
         {
             isRespawning = true;
-            resetBarrel("center");
+            resetBarrel("center", 2.0f, false);
         }
     }
 
-    public void resetBarrel(string playerSide)
+    public void resetBarrel(string playerSide, float waitTime, bool respawnPlayer)
     {
         /* 等待2秒後再Reset Barrel位置 */
-        StartCoroutine(ToResetBarrel(playerSide, 2.0f));
+        StartCoroutine(ToResetBarrel(playerSide, waitTime, respawnPlayer));
     }
 
-    IEnumerator ToResetBarrel(string playerSide, float waitTime)
+    IEnumerator ToResetBarrel(string playerSide, float waitTime, bool respawnPlayer)
     {
+        isRespawning = true;
         yield return new WaitForSeconds(waitTime);
         rb.velocity = new Vector3(0, 0, 0);            // 速度歸零, 避免慣性
         barrelTransform.rotation = originalRot;
@@ -59,7 +64,22 @@ public class Barrel : MonoBehaviour
         {
             barrelTransform.position = originalPos;
         }
+        if (respawnPlayer)
+        {
+            RespawnPlayer();
+        }
+        musicController.PlayGameStartWhistle();
         isRespawning = false;
+    }
+
+    void RespawnPlayer()
+    {
+        foreach (Transform child in Players.transform)
+        {
+            BallRespawn ballRespawn = child.gameObject.GetComponent<BallRespawn> ();
+            if (ballRespawn != null)
+                ballRespawn.RespawnPlayer();
+        }
     }
 
 }

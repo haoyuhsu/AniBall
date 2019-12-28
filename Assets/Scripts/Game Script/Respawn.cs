@@ -13,7 +13,7 @@ public class Respawn : MonoBehaviour
         }
         if (col.gameObject.tag == "Barrel")
         {
-           col.gameObject.GetComponent<Barrel>().resetBarrel("center");
+           col.gameObject.GetComponent<Barrel>().resetBarrel("center", 2.0f, false);
         }
         if (col.gameObject.tag == "Floor")
         {

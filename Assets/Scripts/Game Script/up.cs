@@ -5,16 +5,19 @@ using UnityEngine;
 public class Up : MonoBehaviour
 {
     float cnt = 0;
-    float speed = 0.1f;
+    float speed = 0.118f;
     public float finalHeight;
     bool isLifting = false;
     FallFloor fallFloor;
+    MusicController musicController;
     public Transform ringTransform;
 
     void Start()
     {
         Time.timeScale = 0;
         fallFloor = GetComponent<FallFloor> ();
+        musicController = GetComponent<MusicController> ();
+        musicController.PlayGearClip();
         isLifting = true;
     }
 
