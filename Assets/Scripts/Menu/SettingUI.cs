@@ -102,13 +102,13 @@ public class SettingUI : MonoBehaviour
     {
 
         if(gameSetting.gameMode == 1){
-            if(gameSetting.maxDeath + index>0){
+            if(gameSetting.maxDeath + index>0 && gameSetting.maxDeath + index<=5){
                 gameSetting.maxDeath += index;
                 maxDeathTxt.text = gameSetting.maxDeath.ToString();
             }
         }
         else{
-            if(gameSetting.maxScore + index>0){
+            if(gameSetting.maxScore + index>0 && gameSetting.maxScore + index<=5){
                 gameSetting.maxScore += index;
                 maxDeathTxt.text = gameSetting.maxScore.ToString();
             }
@@ -116,7 +116,7 @@ public class SettingUI : MonoBehaviour
     }
     public void SetTimeBtn(int index)
     {
-        if(gameSetting.roundTime + index>0){
+        if(gameSetting.roundTime + index>0 && gameSetting.roundTime + index<=300){
             gameSetting.roundTime += index;
             TimeTxt.text = gameSetting.roundTime.ToString();
         }
