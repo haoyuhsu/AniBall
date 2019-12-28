@@ -7,6 +7,7 @@ public class DetectBarrel : MonoBehaviour
     public int side;     // 0: Team1, 1: Team2
     public Score soccerScore;
     public MusicController musicController;
+    public ParticleSystem Fireworks;
 
     void OnTriggerEnter(Collider col)
     {
@@ -19,6 +20,7 @@ public class DetectBarrel : MonoBehaviour
                 soccerScore.AddScore(1, side);
                 musicController.PlayGoalClip();
                 musicController.PlayRefWhistle();
+                Fireworks.Play();
                 barrel.resetBarrel("center", 5f, true);
             }
         }
