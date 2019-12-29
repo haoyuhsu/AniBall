@@ -46,5 +46,6 @@ public class PauseMenu : MonoBehaviour
     {
         Toggle();
         sceneFader.FadeTo(menuSceneName);
+        Destroy(GameObject.Find("Controller"));
     }
 }
