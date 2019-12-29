@@ -61,4 +61,13 @@ public class BallRespawn : MonoBehaviour
         groundHeight = val;
     }
 
+    void OnCollisionEnter(Collision col)          // 物體掉落至場景外的情況
+    {
+        if (col.gameObject.tag == "environment")
+        {
+            isRespawning = true;
+            RespawnPlayer();
+        }
+    }
+
 }

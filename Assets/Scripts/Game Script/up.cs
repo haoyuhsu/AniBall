@@ -5,8 +5,8 @@ using UnityEngine;
 public class Up : MonoBehaviour
 {
     float cnt = 0;
-    float speed = 0.118f;
-    public float finalHeight;
+    float speed = 0.155f;
+    float finalHeight = 30;
     bool isLifting = false;
     FallFloor fallFloor;
     MusicController musicController;

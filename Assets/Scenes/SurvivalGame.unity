@@ -12316,6 +12316,7 @@ MonoBehaviour:
   gameStartWhistleClip: {fileID: 8300000, guid: 4968557e646ae414f86cc3e66a8f1d50,
     type: 3}
   goalClip: {fileID: 8300000, guid: ecc2e31b9d1cba04f9f1e0bbf4f47ac9, type: 3}
+  WaterSplashClip: {fileID: 0}
 --- !u!1001 &402737468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68039,8 +68040,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 200, y: 2, z: 200}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 441.79272, y: 4.4179263, z: 437.57742}
+  m_Center: {x: -3.0043073e-16, y: -0.0000011920929, z: -0.47885895}
 --- !u!4 &2091928485
 Transform:
   m_ObjectHideFlags: 0
@@ -68067,6 +68068,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5918cf911af487c46a3a24d69c142544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicController: {fileID: 400857681}
+  isSoccerGame: 0
 --- !u!1001 &2092651828
 PrefabInstance:
   m_ObjectHideFlags: 0

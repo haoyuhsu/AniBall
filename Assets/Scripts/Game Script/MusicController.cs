@@ -9,6 +9,7 @@ public class MusicController : MonoBehaviour
     public AudioClip refWhistleClip;
     public AudioClip gameStartWhistleClip;
     public AudioClip goalClip;
+    public AudioClip WaterSplashClip;
     float orig_volume;
 
     void Start()
@@ -50,5 +51,10 @@ public class MusicController : MonoBehaviour
         }
         audioSource.Stop();
         audioSource.volume = orig_volume;
+    }
+
+    public void PlayWaterDrop()
+    {
+        audioSource.PlayOneShot(WaterSplashClip, 1.0f);
     }
 }
