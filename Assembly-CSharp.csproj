@@ -153,7 +153,10 @@
      <Compile Include="Assets\Scripts\Trap\Toggle.cs" />
      <Compile Include="Assets\Scripts\UI Control\AimSliderControl.cs" />
      <Compile Include="Assets\Scripts\UI Control\BillboardSprite.cs" />
+     <Compile Include="Assets\Scripts\UI Control\GameUIinit.cs" />
      <Compile Include="Assets\Scripts\UI Control\GetName.cs" />
+     <Compile Include="Assets\Scripts\UI Control\LifeObject.cs" />
+     <Compile Include="Assets\Scripts\UI Control\LifeUI.cs" />
      <Compile Include="Assets\Scripts\UI Control\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\UI Control\SceneFader.cs" />
      <Compile Include="Assets\Trails FX\Demo\Scripts\MoveObject.cs" />

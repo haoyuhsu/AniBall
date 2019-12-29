@@ -41,7 +41,6 @@ public class PlayerInit : MonoBehaviour
 
     void SoccerGameInit()
     {
-        Debug.Log(numPlayers);
         for (int i=0; i<numPlayers; i++)
         {
             string animalName = gameSetting.playersAnimal[i];
@@ -83,6 +82,10 @@ public class PlayerInit : MonoBehaviour
 
         /* 將此Prefab放到Players的Hierarchy下面 */
         animalPrefab.transform.parent = PlayersObject.transform;
+
+        /* 設定玩家的Index, 為了生命數UI好操作 */
+        DeathCount deathCount = animalPrefab.GetComponent<DeathCount> ();
+        deathCount.playerIndex = index;
     }
 
     void GeneratePlayer_Soccer(int index, GameObject animalToSpawn){

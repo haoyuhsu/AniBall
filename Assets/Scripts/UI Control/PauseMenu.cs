@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class PauseMenu : MonoBehaviour
     //public GameObject gameSceneUI;
     public SceneFader sceneFader;
     public string menuSceneName = "MainMenu";
+    public Sprite PlaySprite;
+    public Sprite PauseSprite;
+    public Image ButtonImage;
 
     void Update()
     {
@@ -19,14 +23,15 @@ public class PauseMenu : MonoBehaviour
     public void Toggle()
     {
         pauseMenuUI.SetActive(!pauseMenuUI.activeSelf);
-        //gameSceneUI.SetActive(!gameSceneUI.activeSelf);
 
         if (pauseMenuUI.activeSelf)
         {
+            ButtonImage.sprite = PauseSprite;
             Time.timeScale = 0f;
         }
         else
         {
+            ButtonImage.sprite = PlaySprite;
             Time.timeScale = 1f;
         }
     }
