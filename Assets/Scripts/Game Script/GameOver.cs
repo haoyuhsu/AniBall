@@ -61,8 +61,6 @@ public class GameOver : MonoBehaviour
                 Radius = Vector2.Distance(new Vector2(WinnerPos.x,WinnerPos.z),new Vector2(Camera.transform.position.x,Camera.transform.position.z));
                 StartCoroutine(GetClose());
                 StartCoroutine(Survival_Showcanvas());
-                //Debug.Log("index "+deathCount.playerIndex);
-                //Debug.Log("life "+deathCount.lifeLeft);
             }
         }
     }
@@ -92,16 +90,18 @@ public class GameOver : MonoBehaviour
             Winner.transform.localScale -= new Vector3(Winner_Scale,Winner_Scale,0);
             yield return 0;
         }
+        musicController.PlayRank();
         yield return new WaitForSeconds(0.1f);
         Rank.gameObject.SetActive(true);
         while(Rank.transform.localScale.x > Rank_Scale){
             Rank.transform.localScale -= new Vector3(Rank_Scale,Rank_Scale,0);
             yield return 0;
         }
+        musicController.PlayRank();
+        yield return 0;
     }
     IEnumerator GetClose()
     {
-        //Debug.Log(Radius);
         while (Radius >= CameraDis)
         {
             Camera.transform.Translate(Vector3.Normalize(WinnerPos+(new Vector3(0,5,0)) - Camera.transform.position)*0.5f);
@@ -174,6 +174,7 @@ public class GameOver : MonoBehaviour
                 WinnerTeam.localScale -= new Vector3(1,1,0);
                 yield return 0;
             }
+            musicController.PlayRank();
             yield return new WaitForSeconds(0.1f);
             if(Score>=4){
                 Rank = Scores.transform.GetChild(0);
@@ -191,15 +192,19 @@ public class GameOver : MonoBehaviour
                 Rank.localScale -= new Vector3(Scale/4,Scale/4,0);
                 yield return 0;
             }
+            musicController.PlayRank();
+            yield return 0;
         }
         else if (Score<0){
             WinnerTeam = Teams.transform.GetChild(1);
             WinnerTeam.gameObject.SetActive(true);
-            WinnerTeam.localScale = new Vector3(99,99,0);
-            while(WinnerTeam.localScale.x>3){
-                WinnerTeam.localScale -= new Vector3(1,1,0);
+            float Winner_Scale = WinnerTeam.localScale.x;
+            WinnerTeam.localScale = new Vector3(Winner_Scale*25,Winner_Scale*25,0);
+            while(WinnerTeam.localScale.x > Winner_Scale){
+                WinnerTeam.localScale -= new Vector3(Winner_Scale,Winner_Scale,0);
                 yield return 0;
             }
+            musicController.PlayRank();
             yield return new WaitForSeconds(0.1f);
             if(Score<=-4){
                 Rank = Scores.transform.GetChild(0);
@@ -211,12 +216,14 @@ public class GameOver : MonoBehaviour
                 Rank = Scores.transform.GetChild(2);
             }
             Rank.gameObject.SetActive(true);
-            float Scale = Rank.localScale.x;
-            Rank.localScale = new Vector3(Scale*25,Scale*25,0);
-            while(Rank.localScale.x > Scale){
-                Rank.localScale -= new Vector3(Scale/4,Scale/4,0);
+            float Rank_Scale = Rank.localScale.x;
+            Rank.localScale = new Vector3(Rank_Scale*25,Rank_Scale*25,0);
+            while(Rank.localScale.x > Rank_Scale){
+                Rank.localScale -= new Vector3(Rank_Scale,Rank_Scale,0);
                 yield return 0;
             }
+            musicController.PlayRank();
+            yield return 0;
         }
     }
 }

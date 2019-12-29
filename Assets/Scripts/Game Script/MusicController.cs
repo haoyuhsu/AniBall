@@ -10,11 +10,16 @@ public class MusicController : MonoBehaviour
     public AudioClip gameStartWhistleClip;
     public AudioClip goalClip;
     public AudioClip WaterSplashClip;
+    public AudioClip RankClip;
     float orig_volume;
 
     void Start()
     {
         orig_volume = audioSource.volume;
+    }
+
+    public void PlayRank(){
+        audioSource.PlayOneShot(RankClip, 1.0f);
     }
 
     public void PlayGearClip()

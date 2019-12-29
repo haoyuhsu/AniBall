@@ -23,7 +23,6 @@ public class PauseMenu : MonoBehaviour
     public void Toggle()
     {
         pauseMenuUI.SetActive(!pauseMenuUI.activeSelf);
-
         if (pauseMenuUI.activeSelf)
         {
             ButtonImage.sprite = PauseSprite;
@@ -38,13 +37,16 @@ public class PauseMenu : MonoBehaviour
 
     public void Retry()
     {
-        Toggle();
+        //Toggle();
+        ButtonImage.sprite = PlaySprite;
         sceneFader.FadeTo(SceneManager.GetActiveScene().name);
     }
 
     public void Menu()
     {
-        Toggle();
+        //Toggle();
+        ButtonImage.sprite = PlaySprite;
+        Time.timeScale = 1;
         sceneFader.FadeTo(menuSceneName);
         Destroy(GameObject.Find("Controller"));
     }
