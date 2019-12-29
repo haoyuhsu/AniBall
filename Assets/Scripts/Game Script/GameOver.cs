@@ -70,7 +70,7 @@ public class GameOver : MonoBehaviour
         yield return new WaitForSeconds(2);
         gameoverCanvas.enabled = true;
         Transform Rank;
-        Transform Winner = Teams.transform.GetChild(deathCount.playerIndex+1);
+        Transform Winner = Teams.transform.GetChild(deathCount.playerIndex);
         float Winner_Scale = Winner.transform.localScale.x;
         float Rank_Scale;
         if(deathCount.lifeLeft >= 3){

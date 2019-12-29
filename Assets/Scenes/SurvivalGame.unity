@@ -12392,7 +12392,7 @@ MonoBehaviour:
   resultText: {fileID: 454732980}
   soccerScore: {fileID: 0}
   Camera: {fileID: 4304859779034024243}
-  RotateSpeed: 0.5
+  RotateSpeed: 0.4
   CameraDis: 5
   Spotlights: {fileID: 0}
   Directlight: {fileID: 0}
