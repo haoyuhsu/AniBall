@@ -90,6 +90,10 @@ public class SettingUI : MonoBehaviour
     public void SetGameMode(int mode){
         gameSetting.gameMode = mode;
         modeBG.sprite = modeBGSprite[mode];
+        if(mode == 0){
+            maxDeathTxt.text = gameSetting.maxScore.ToString();
+        }
+        else maxDeathTxt.text = gameSetting.maxDeath.ToString();
     }
     public void SetPlayerBtn(int index)
     {
