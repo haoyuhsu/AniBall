@@ -39,6 +39,7 @@ public class PauseMenu : MonoBehaviour
     {
         //Toggle();
         ButtonImage.sprite = PlaySprite;
+        Time.timeScale = 1;
         sceneFader.FadeTo(SceneManager.GetActiveScene().name);
     }
 

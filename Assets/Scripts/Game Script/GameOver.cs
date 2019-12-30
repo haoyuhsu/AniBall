@@ -23,6 +23,9 @@ public class GameOver : MonoBehaviour
     public MusicController musicController;
     public GameObject Scores;
     public GameObject Teams;
+    public GameObject Tie;
+    public GameObject Background;
+    public GameObject PauseButton;
 
     void Start()
     {
@@ -43,10 +46,10 @@ public class GameOver : MonoBehaviour
         //Time.timeScale = 0f;    // 結束時將時間停止
 
         /* 根據遊戲類型去決定Game Over形式 */
+        PauseButton.SetActive(false);
         if (TypeOfGame == "Soccer Game")
         {
             if (soccerScore != null){
-                
                 SoccerGameOver();
             }
                 
@@ -67,7 +70,7 @@ public class GameOver : MonoBehaviour
 
     //-------
     IEnumerator Survival_Showcanvas(){
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSecondsRealtime(2);
         gameoverCanvas.enabled = true;
         Transform Rank;
         Transform Winner = Teams.transform.GetChild(deathCount.playerIndex);
@@ -91,7 +94,7 @@ public class GameOver : MonoBehaviour
             yield return 0;
         }
         musicController.PlayRank();
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSecondsRealtime(0.1f);
         Rank.gameObject.SetActive(true);
         while(Rank.transform.localScale.x > Rank_Scale){
             Rank.transform.localScale -= new Vector3(Rank_Scale,Rank_Scale,0);
@@ -153,29 +156,29 @@ public class GameOver : MonoBehaviour
             }
             
         }
-        else
-        {
-            resultText.text = "Tied Game";
-        }
         StartCoroutine(Soccer_ShowCanvas(team1Score,team2Score));
+        
     }
 
     IEnumerator Soccer_ShowCanvas(float team1Score,float team2Score){
         float Score = team1Score - team2Score;
         Transform WinnerTeam;
         Transform Rank;
-        yield return new WaitForSeconds(2.5f);
+        float speed = 30;
+        yield return new WaitForSecondsRealtime(2f);
+        //Time.timeScale = 0;
         gameoverCanvas.enabled = true;
         if(Score>0){
             WinnerTeam = Teams.transform.GetChild(0);
             WinnerTeam.gameObject.SetActive(true);
-            WinnerTeam.localScale = new Vector3(99,99,0);
-            while(WinnerTeam.localScale.x>3){
-                WinnerTeam.localScale -= new Vector3(1,1,0);
-                yield return 0;
+            float Winner_Scale = WinnerTeam.localScale.x;
+            WinnerTeam.localScale = new Vector3(Winner_Scale*speed,Winner_Scale*speed,0);
+            while(WinnerTeam.localScale.x>Winner_Scale){
+                WinnerTeam.localScale -= new Vector3(Winner_Scale,Winner_Scale,0);
+                yield return new WaitForEndOfFrame();
             }
             musicController.PlayRank();
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSecondsRealtime(0.1f);
             if(Score>=4){
                 Rank = Scores.transform.GetChild(0);
             }
@@ -187,25 +190,25 @@ public class GameOver : MonoBehaviour
             }
             Rank.gameObject.SetActive(true);
             float Scale = Rank.localScale.x;
-            Rank.localScale = new Vector3(Scale*25,Scale*25,0);
+            Rank.localScale = new Vector3(Scale*speed,Scale*speed,0);
             while(Rank.localScale.x > Scale){
-                Rank.localScale -= new Vector3(Scale/4,Scale/4,0);
-                yield return 0;
+                Rank.localScale -= new Vector3(Scale,Scale,0);
+                yield return new WaitForEndOfFrame();
             }
             musicController.PlayRank();
-            yield return 0;
+            yield return new WaitForEndOfFrame();
         }
         else if (Score<0){
             WinnerTeam = Teams.transform.GetChild(1);
             WinnerTeam.gameObject.SetActive(true);
             float Winner_Scale = WinnerTeam.localScale.x;
-            WinnerTeam.localScale = new Vector3(Winner_Scale*25,Winner_Scale*25,0);
+            WinnerTeam.localScale = new Vector3(Winner_Scale*speed,Winner_Scale*speed,0);
             while(WinnerTeam.localScale.x > Winner_Scale){
                 WinnerTeam.localScale -= new Vector3(Winner_Scale,Winner_Scale,0);
-                yield return 0;
+                yield return new WaitForEndOfFrame();
             }
             musicController.PlayRank();
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSecondsRealtime(0.1f);
             if(Score<=-4){
                 Rank = Scores.transform.GetChild(0);
             }
@@ -217,13 +220,25 @@ public class GameOver : MonoBehaviour
             }
             Rank.gameObject.SetActive(true);
             float Rank_Scale = Rank.localScale.x;
-            Rank.localScale = new Vector3(Rank_Scale*25,Rank_Scale*25,0);
+            Rank.localScale = new Vector3(Rank_Scale*speed,Rank_Scale*speed,0);
             while(Rank.localScale.x > Rank_Scale){
                 Rank.localScale -= new Vector3(Rank_Scale,Rank_Scale,0);
-                yield return 0;
+                yield return new WaitForEndOfFrame();
             }
             musicController.PlayRank();
-            yield return 0;
+            yield return new WaitForEndOfFrame();
+        }
+        else {
+            Background.SetActive(false);
+            Tie.SetActive(true);
+            float Tie_Scale = Tie.transform.localScale.x;
+            Tie.transform.localScale = new Vector3(Tie_Scale*speed,Tie_Scale*speed,0);
+            while(Tie.transform.localScale.x > Tie_Scale){
+                Tie.transform.localScale -= new Vector3(Tie_Scale,Tie_Scale,0);
+                yield return new WaitForEndOfFrame();
+            }
+            musicController.PlayRank();
+            yield return new WaitForEndOfFrame();
         }
     }
 }
