@@ -14,7 +14,7 @@ public class BallRespawn : MonoBehaviour
     Vector3 spawnPos;             // 重生位置
     float groundHeight;           // 地板高度
     DeathCount deathCount;
-    bool isRespawning = false;
+    public bool isRespawning = false;
 
     void Start()
     {
@@ -63,7 +63,7 @@ public class BallRespawn : MonoBehaviour
 
     void OnCollisionEnter(Collision col)          // 物體掉落至場景外的情況
     {
-        if (col.gameObject.tag == "environment")
+        if (col.gameObject.tag == "environment" && !isRespawning)
         {
             isRespawning = true;
             RespawnPlayer();

@@ -47,7 +47,9 @@ public class PauseMenu : MonoBehaviour
         //Toggle();
         ButtonImage.sprite = PlaySprite;
         Time.timeScale = 1;
+        GameSetting gameSetting = FindObjectOfType<GameSetting>();
+        if (gameSetting != null)
+            Destroy(gameSetting);
         sceneFader.FadeTo(menuSceneName);
-        Destroy(GameObject.Find("Controller"));
     }
 }

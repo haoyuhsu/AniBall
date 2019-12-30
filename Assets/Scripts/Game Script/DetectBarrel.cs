@@ -17,6 +17,7 @@ public class DetectBarrel : MonoBehaviour
             Barrel barrel = col.GetComponent<Barrel> ();
             if (!barrel.isRespawning)
             {
+                barrel.isRespawning = true;
                 soccerScore.AddScore(1, side);
                 musicController.PlayGoalClip();
                 musicController.PlayRefWhistle();
