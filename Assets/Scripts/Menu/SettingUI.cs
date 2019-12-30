@@ -23,6 +23,8 @@ public class SettingUI : MonoBehaviour
     public GameObject[] AniImgNoplay;
     public Image modeBG;
     public Sprite[] modeBGSprite;
+    public Button[] timeBtn;
+    public GameObject blockTimeImg;
 
     void Start()
     {
@@ -205,4 +207,14 @@ public class SettingUI : MonoBehaviour
             SetAnimal(i);
         }
     }
+    public void disableTimeBtn(){
+        timeBtn[0].interactable = false;
+        timeBtn[1].interactable = false;
+        blockTimeImg.SetActive(true);
+    }
+    public void enableTimeBtn(){
+        timeBtn[0].interactable = true;
+        timeBtn[1].interactable = true;
+        blockTimeImg.SetActive(false);
+    }  
 }
