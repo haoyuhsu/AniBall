@@ -50457,7 +50457,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1625768470}
-        m_MethodName: disableTimeBtn
+        m_MethodName: enableTimeBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -51064,7 +51064,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1625768470}
-        m_MethodName: enableTimeBtn
+        m_MethodName: disableTimeBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
