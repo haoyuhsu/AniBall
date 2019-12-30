@@ -35,7 +35,9 @@ public class SettingUI : MonoBehaviour
         SetMaxScore();
         SetMaxDeath();
         SetTimeLimit();
-        
+        for(int i=0;i<4;i++){
+            SetAnimal(i);
+        }
     }
 
     public void SetNumPlayer()
@@ -98,7 +100,19 @@ public class SettingUI : MonoBehaviour
     public void SetPlayerBtn(int index)
     {
         if(gameSetting.numPlayers + index>=2 && gameSetting.numPlayers + index<=4){
-            gameSetting.numPlayers += index;
+            if(gameSetting.gameMode==1){
+                gameSetting.numPlayers += index;
+            }
+            else{
+                if(gameSetting.numPlayers + index == 3){
+                    if(index == 1){
+                        gameSetting.numPlayers = 4;
+                    }
+                    else{
+                        gameSetting.numPlayers = 2;
+                    }
+                }
+            }
             numPlayersTxt.text = gameSetting.numPlayers.ToString();
         }
     }
@@ -159,7 +173,7 @@ public class SettingUI : MonoBehaviour
         AniImgNoplay[0].SetActive(true);
         AniImgNoplay[1].SetActive(true);
         playersAnimalsIndex[2] = 2;
-        playersAnimalsIndex[3] = 3;
+        playersAnimalsIndex[3] = 1;
         chooseBtn[4].interactable = true;
         chooseBtn[5].interactable = true;
         chooseBtn[6].interactable = true;
