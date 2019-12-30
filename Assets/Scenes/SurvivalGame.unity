@@ -12269,6 +12269,7 @@ MonoBehaviour:
   Tie: {fileID: 2000619890}
   Background: {fileID: 264877241}
   PauseButton: {fileID: 2845207207450524763}
+  Speed: 50
 --- !u!114 &400857671
 MonoBehaviour:
   m_ObjectHideFlags: 0

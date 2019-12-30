@@ -50,7 +50,7 @@ public class Score : MonoBehaviour
             team2Score += val;
         }
 
-        if (team1Score == maxScore || team2Score == maxScore)
+        if ((team1Score == maxScore || team2Score == maxScore) && !gameObject.GetComponent<GameOver> ().Ended)
         {
             gameObject.GetComponent<GameOver> ().OpenGameOverCanvas("Soccer Game");
         }

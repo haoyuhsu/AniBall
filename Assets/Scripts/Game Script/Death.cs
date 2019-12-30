@@ -9,9 +9,10 @@ public class Death : MonoBehaviour
     public void CheckWinner()
     {
         playersLeft = FindObjectsOfType<DeathCount> ();
-        if (playersLeft.Length == 1)
+        GameOver gameOverobj = gameObject.GetComponent<GameOver>();
+        if (playersLeft.Length == 1 && !gameOverobj.Ended)
         {
-            gameObject.GetComponent<GameOver> ().OpenGameOverCanvas("Survival Game");
+            gameOverobj.OpenGameOverCanvas("Survival Game");
         }
     }
 }

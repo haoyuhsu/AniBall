@@ -33,6 +33,7 @@ public class Timer : MonoBehaviour
     void gameOver()
     {
         gameEnd = true;
-        gameOverObj.OpenGameOverCanvas(TypeOfGame);
+        if(!gameOverObj.Ended)
+            gameOverObj.OpenGameOverCanvas(TypeOfGame);
     }
 }
