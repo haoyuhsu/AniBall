@@ -5,6 +5,7 @@ using UnityEngine;
 public class MusicController : MonoBehaviour
 {
     public AudioSource audioSource;
+    public AudioSource WhistleAudioSource;
     public AudioClip GearClip;
     public AudioClip refWhistleClip;
     public AudioClip gameStartWhistleClip;
@@ -15,7 +16,7 @@ public class MusicController : MonoBehaviour
 
     void Start()
     {
-        orig_volume = audioSource.volume;
+        orig_volume = WhistleAudioSource.volume;
     }
 
     public void PlayRank(){
@@ -39,23 +40,26 @@ public class MusicController : MonoBehaviour
 
     public void PlayGoalClip()
     {
-        audioSource.clip = goalClip;
-        audioSource.PlayOneShot(goalClip);
-        StartCoroutine(Decreasing());
+        if (WhistleAudioSource != null)
+        {
+            WhistleAudioSource.clip = goalClip;
+            WhistleAudioSource.Play();
+            StartCoroutine(Decreasing());
+        }
     }
 
     IEnumerator Decreasing()
     {
-        float decrement = 0.005f;
+        float decrement = 0.003f;
         float cur_volume = orig_volume;
         while (cur_volume >= 0)
         {
             cur_volume -= decrement;
-            audioSource.volume = cur_volume;
+            WhistleAudioSource.volume = cur_volume;
             yield return 0;
         }
-        audioSource.Stop();
-        audioSource.volume = orig_volume;
+        WhistleAudioSource.Stop();
+        WhistleAudioSource.volume = orig_volume;
     }
 
     public void PlayWaterDrop()
