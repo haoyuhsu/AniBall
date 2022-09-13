@@ -24,16 +24,16 @@ For complete introduction of this game, please click [here(Youtube)](https://www
 
 ## Game Features
 
-<img src="source/intro page/Game Intro_page-0005.jpg"/></a>
-<img src="source/intro page/Game Intro_page-0006.jpg"/></a>
-<img src="source/intro page/Game Intro_page-0007.jpg"/></a>
-<img src="source/intro page/Game Intro_page-0008.jpg"/></a>
-<img src="source/intro page/Game Intro_page-0009.jpg"/></a>
-<img src="source/intro page/Game Intro_page-0010.jpg"/></a>
-<img src="source/intro page/Game Intro_page-0011.jpg"/></a>
-<img src="source/intro page/Game Intro_page-0012.jpg"/></a>
-<img src="source/intro page/Game Intro_page-0013.jpg"/></a>
-<img src="source/intro page/Game Intro_page-0015.jpg"/></a>
-<img src="source/intro page/Game Intro_page-0016.jpg"/></a>
+<img src="source/intro page/Game Intro English_page-0005.jpg"/></a>
+<img src="source/intro page/Game Intro English_page-0006.jpg"/></a>
+<img src="source/intro page/Game Intro English_page-0007.jpg"/></a>
+<img src="source/intro page/Game Intro English_page-0008.jpg"/></a>
+<img src="source/intro page/Game Intro English_page-0009.jpg"/></a>
+<img src="source/intro page/Game Intro English_page-0010.jpg"/></a>
+<img src="source/intro page/Game Intro English_page-0011.jpg"/></a>
+<img src="source/intro page/Game Intro English_page-0012.jpg"/></a>
+<img src="source/intro page/Game Intro English_page-0013.jpg"/></a>
+<img src="source/intro page/Game Intro English_page-0015.jpg"/></a>
+<img src="source/intro page/Game Intro English_page-0016.jpg"/></a>
 
-Link to full report : [report](https://github.com/MaxHsu88/AniBall/blob/master/source/Game%20Intro.pdf)
+Link to full report : [report](https://github.com/haoyuhsu/AniBall/blob/master/source/Game%20Intro%20English.pdf)
