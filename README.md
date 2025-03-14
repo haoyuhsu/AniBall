@@ -19,7 +19,7 @@ For complete introduction of this game, please click [here(Youtube)](https://www
 
 ## Game Download
 
-* The whole game file can be downloaded by this link : [link](https://www.dropbox.com/s/pke7fkc7zdl1dmh/AniBall.zip?dl=0)
+* The whole game file can be downloaded by this link : [link]([https://www.dropbox.com/s/pke7fkc7zdl1dmh/AniBall.zip?dl=0](https://drive.google.com/file/d/1m59obEY-ZSFlNgYpimpgX70_b_hJ0lN9/view?usp=sharing))
 * After unzipping the downloaded files, click `Jelly Effect Test.exe` under the `AniBall` folder. Then press `Play` to enjoy your game!
 
 ## Game Features
